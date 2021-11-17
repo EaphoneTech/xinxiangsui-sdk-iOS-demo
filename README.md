@@ -1,8 +1,35 @@
 # 心相随设备配网SDK demo
-# ===========================
  
 ## 功能简介：
    心相随SDK功能实现，包括扫描获取外围设备，连接设备，实现蓝牙配网，扫描读取特征服务，获取实时波形数据及相关状态数据等。
+   
+   
+## 集成说明
+1. 将EphoneSDK.framework拷贝至项目根目录
+
+2. 导入头文件
+```
+#import <EphoneSDK/EphoneSDK.h>
+```
+
+3. info.plist中设定蓝牙访问权限、定位权限（用于获取Wi-Fi）
+```
+<key>NSBluetoothAlwaysUsageDescription</key>
+<string>心相随需要访问您的蓝牙，用于您设备联网等功能</string>
+<key>NSBluetoothPeripheralUsageDescription</key>
+<string>心相随需要访问您的蓝牙，用于您设备联网等功能</string>
+
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>获取Wi-FI名称需要您的定位权限，以便帮助您配置设备</string>
+```
+
+4. 项目TARGETS
+```
+ Capability：添加Access WiFi Information
+ Background Modes: 选择 Uses Bluetooth LE accessories、Background fetch
+ ```
+
+
    
 ## 实现方法：
 ### 1. 单例类YFBleManager：调用单例方法，扫描获取设备列表，读取设备服务
@@ -13,8 +40,13 @@
 | - (void)stopScanPeripheral                             |---| 停止扫描设备 |
 | - (void)connectPeripheral:(CBPeripheral *)peripheral   |CBPeripheral 要连接的设备，不可为空| 连接设备 |
 | - (void)cancelPeripheralConnection                     |---| 取消连接设备 |
-| - (void)DiscoverServices                               |---| 获取设备中的服务 |
 
+
+示例一（扫描设备）：
+```
+[[YFBleManager shareTool] scanPeripheral];
+```
+示例二（连接设备）：
 
 
 

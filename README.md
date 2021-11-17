@@ -42,11 +42,17 @@
 | - (void)cancelPeripheralConnection                     |---| 取消连接设备 |
 
 
-示例一（扫描设备）：
+
+判断是否有PPG信号  有YES：同时有ECG和PPG数据， 没有NO：仅有ECG数据
+```
+@property (nonatomic, assign) BOOL isHasPPG
+```
+
+示例（扫描设备）：
 ```
 [[YFBleManager shareTool] scanPeripheral];
 ```
-示例二（连接设备）：
+
 
 
 
@@ -70,6 +76,14 @@
 | - (void)bluetoothHeartRate: (long)heartRate                   |---| 心率 |
 | - (void)monitoringDurationOfTheDevice:(long)monitoringTime                            |monitoringTime：时长，单位为秒| 设备监测时长 |
 
+说明：
+```
+if([YFBleManager shareTool].isHasPPG) {
+   //调用 - (void)bluetoothAllWaveECG:(NSMutableArray *)ECGArray PPGRedLight:(NSMutableArray *)PPGRedLightArray PPGInfrared:(NSMutableArray *)PPGInfraredArray  
+} else {
+   //调用 - (void)bluetoothECGWaveData:(NSMutableArray *)array
+}
+```
 
 #### 2.3 监测设备状态
 |方法|参数|说明|
@@ -77,10 +91,16 @@
 | - (void)ECGSignalStatus:(BOOL)signalStatus                              |signalStatus  YES：信号良好， NO：信号不佳 或 采集不到信号| ECG信号采集状态 |
 | - (void)PPGSignalStatus:(BOOL)signalStatus                  |signalStatus  YES：信号良好， NO：信号不佳 或 采集不到信号| PPG信号采集状态 |
 | - (void)deviceStatusOfLeaveSeat:(BOOL)isLeaveSeat                |isLeaveSeat 离座状态：YES， 离座 NO：未离座  | 是否离座 |
-   
+  
+  
+## 文档
+[com.芯相随.ephonesdk.EphoneSDK.docset.zip](https://github.com/wlz0610/EphoneSDKTestDemo/files/7553283/com.ephonesdk.EphoneSDK.docset.zip)
    
 ## 系统要求
 该项目最低支持 iOS 10.0
+
+
+
 
 
 

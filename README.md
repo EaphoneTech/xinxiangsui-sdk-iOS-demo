@@ -68,9 +68,14 @@
 | - (void)bluetoothECGWaveData:(NSMutableArray *)array                            |---| 实时波形数据 --- ECG |
 | - (void)bluetoothAllWaveECG:(NSMutableArray *)ECGArray PPGRedLight:(NSMutableArray *)PPGRedLightArray PPGInfrared:(NSMutableArray *)PPGInfraredArray  |ECGArray：ECG，PPGRedLightArray：PPG红光数据，PPGInfraredArray：PPG红外数据| 实时波形数据 --- ECG、PPG红光数据、PPG红外数据 |
 | - (void)bluetoothHeartRate: (long)heartRate                   |---| 心率 |
+| - (void)monitoringDurationOfTheDevice:(long)monitoringTime                            |monitoringTime：时长，单位为秒| 设备监测时长 |
+
+
+#### 2.3 监测设备状态
+|方法|参数|说明|
+|-------------|:-------------:|-----|
 | - (void)ECGSignalStatus:(BOOL)signalStatus                              |signalStatus  YES：信号良好， NO：信号不佳 或 采集不到信号| ECG信号采集状态 |
 | - (void)PPGSignalStatus:(BOOL)signalStatus                  |signalStatus  YES：信号良好， NO：信号不佳 或 采集不到信号| PPG信号采集状态 |
-| - (void)monitoringDurationOfTheDevice:(long)monitoringTime                            |monitoringTime：时长，单位为秒| 设备监测时长 |
 | - (void)deviceStatusOfLeaveSeat:(BOOL)isLeaveSeat                |isLeaveSeat 离座状态：YES， 离座 NO：未离座  | 是否离座 |
    
 

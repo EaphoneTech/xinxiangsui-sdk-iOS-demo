@@ -78,6 +78,9 @@
 | - (void)PPGSignalStatus:(BOOL)signalStatus                  |signalStatus  YES：信号良好， NO：信号不佳 或 采集不到信号| PPG信号采集状态 |
 | - (void)deviceStatusOfLeaveSeat:(BOOL)isLeaveSeat                |isLeaveSeat 离座状态：YES， 离座 NO：未离座  | 是否离座 |
    
+   
+## 系统要求
+该项目最低支持 iOS 10.0
 
 
 

@@ -16,8 +16,11 @@
 | - (void)DiscoverServices                               |---| 获取设备中的服务 |
 
 
+
+
 ### 2. YFBluetoothDelegate代理方法回调
 
+#### 2.1 连接设备
 |方法|参数|说明|
 |-------------|:-------------:|-----|
 | - (void)didScanDevicesPeripheral:(CBPeripheral *)peripheral                             |---| 获取扫描到的设备 |
@@ -25,6 +28,11 @@
 | - (void)didDisconnectPeripheral:(CBPeripheral *)peripheral                    |---| 设备连接断开 |
 | - (void)didSuccessToConnectToInternet:(CBPeripheral *)peripheral                              |---| 设备配网成功 |
 | - (void)didFailToConnectToInternet:(NSString *)error                               |---| 设备配网失败 |
+
+
+#### 2.2 获取已连接设备实时数据
+|方法|参数|说明|
+|-------------|:-------------:|-----|
 | - (void)bluetoothECGWaveData:(NSMutableArray *)array                            |---| 实时波形数据 --- ECG |
 | - (void)bluetoothAllWaveECG:(NSMutableArray *)ECGArray PPGRedLight:(NSMutableArray *)PPGRedLightArray PPGInfrared:(NSMutableArray *)PPGInfraredArray  |ECGArray：ECG，PPGRedLightArray：PPG红光数据，PPGInfraredArray：PPG红外数据| 实时波形数据 --- ECG、PPG红光数据、PPG红外数据 |
 | - (void)bluetoothHeartRate: (long)heartRate                   |---| 心率 |

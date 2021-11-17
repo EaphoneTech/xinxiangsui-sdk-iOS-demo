@@ -1,0 +1,6 @@
+framework module EphoneSDK {
+  umbrella header "EphoneSDK.h"
+
+  export *
+  module * { export * }
+}

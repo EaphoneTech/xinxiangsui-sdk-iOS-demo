@@ -15,8 +15,8 @@ FOUNDATION_EXPORT const unsigned char EphoneSDKVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <EphoneSDK/PublicHeader.h>
 
-#import <EphoneSDK/YFNetworkDataModel.h>
+#import <EphoneSDK/YFNetworkTool.h>
 #import <EphoneSDK/YFBleManager.h>
-#import <EphoneSDK/YFDeviceAPIHelpers.h>
-#import <EphoneSDK/YFDeviceManager.h>
 #import <EphoneSDK/YFBluetooth.h>
+#import <EphoneSDK/YFUncaughtExceptionHandler.h>
+

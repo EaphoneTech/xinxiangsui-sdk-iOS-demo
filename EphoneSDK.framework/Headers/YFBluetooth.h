@@ -85,7 +85,7 @@
 - (void)deviceStatusOfLeaveSeat:(BOOL)isLeaveSeat;
 
 
-/// 蓝牙状态
+/// 蓝牙状态更新
 /// @param peripheralState  CBManager的当前状态
 - (void)bluetoothDidUpdateState:(CBManagerState)peripheralState;
 

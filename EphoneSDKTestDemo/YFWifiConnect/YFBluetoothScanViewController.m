@@ -15,7 +15,7 @@
 
 @property (nonatomic, strong) NSMutableArray *deviceArr;
 
-@property (nonatomic, strong) NSString *serialNumber;
+@property (nonatomic, strong) CBPeripheral *peripheral;
 
 @property (nonatomic, strong) YFBluetooth *bluetooth;
 
@@ -31,7 +31,7 @@
     self.navigationItem.title = @"扫描附近设备";
     
     self.bluetooth = [[YFBluetooth alloc] init];
-    self.bluetooth.delegate = self;
+    
 }
 
 
@@ -39,6 +39,7 @@
 {
     [super viewWillAppear:animated];
     
+    self.bluetooth.delegate = self;
     [self.deviceArr removeAllObjects];
 
     [[YFBleManager shareTool] scanPeripheral];
@@ -94,34 +95,13 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     CBPeripheral *peripheral = self.deviceArr[indexPath.row];
-    NSArray *arr = [peripheral.name componentsSeparatedByString:@"."];
+
+    self.peripheral = peripheral;
     
-    self.serialNumber = arr[1];
-    
-    
-    [[YFBleManager shareTool] stopScanPeripheral];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"YFBLEScanDevicesNotification" object:nil];
-    
-    [[YFBleManager shareTool] scanPeripheral];
+    [[YFBleManager shareTool] connectPeripheral:peripheral];
     
 }
 
-
-- (void)didDiscoverPeripheral:(CBPeripheral *)peripheral
-{
-    WEAKSELF;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-        if ([peripheral.name isEqualToString:@"xinxiangsui"]) return;
-        
-        NSArray *arr = [peripheral.name componentsSeparatedByString:@"."];
-        if ([weakSelf.serialNumber isEqualToString:arr[1]]) {
-            [[YFBleManager shareTool] connectPeripheral:peripheral];
-            return;
-        }
-        
-    });
-}
 
 - (void)didConnectSuccessPeripheral:(CBPeripheral *)peripheral
 {
@@ -131,7 +111,7 @@
         weakSelf.bluetooth.delegate = nil;
         
         YFConfigureWiFiViewController *wifi = [[YFConfigureWiFiViewController alloc] init];
-        wifi.serialNumber = weakSelf.serialNumber;
+        wifi.peripheral = weakSelf.peripheral;
         [weakSelf.navigationController pushViewController:wifi animated:YES];
    
     });

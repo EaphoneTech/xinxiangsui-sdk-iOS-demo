@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YFConfigureWiFiViewController : UIViewController
 
-@property (nonatomic, strong) NSString *serialNumber; //条形码序列号
+@property (nonatomic, strong) CBPeripheral *peripheral;
 
 @end
 

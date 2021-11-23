@@ -100,57 +100,6 @@
 }
 
 
-
-- (void)YFBLECGWaveDataNotification:(NSNotification *)notification
-{
-    WEAKSELF;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSMutableArray *arr = notification.object;
-        
-        if (arr.count) {
-            
-            int t = [arr[0] intValue];
-            
-            [arr removeFirstObject];
-            weakSelf.ecgView.ecgArray = arr.mutableCopy;
-            
-            if (t > 0) {
-                int hour = t/3600;
-                int minute = t%3600/60;
-                int second = t%3600%60;
-                
-                NSString *duraStr = [NSString stringWithFormat:@"%02d:%02d:%02d",hour,minute,second];
-                
-                NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"监测时长：  %02d:%02d:%02d",hour,minute,second]];
-
-                [attributedString addAttributes:@{NSForegroundColorAttributeName:kRGBCOLOR(18, 18, 18), NSFontAttributeName:[UIFont systemFontOfSize:16]} range:[[attributedString string] rangeOfString:duraStr]];
-                
-                weakSelf.durationLab.attributedText = attributedString;
-                
-                
-                if (t == 1) {
-                    weakSelf.heartRateLab.hidden = YES;
-                    weakSelf.heartImgView.hidden = YES;
-                }
-                
-                if (weakSelf.leaveSeatAlert.isShow) {
-                    [weakSelf.leaveSeatAlert continueButtonClick];
-                }
-            }
-            if (t == -1) {  //离座标识
-                weakSelf.leaveSeatAlert = [[YFLeaveSeatAlertView alloc] init];
-                [weakSelf.leaveSeatAlert showView];
-                
-                weakSelf.leaveSeatAlert.exitClickBlock = ^{
-                    [weakSelf.navigationController popToRootViewControllerAnimated:YES];
-                };
-            }
-            
-        }
-        
-    });
-}
-
 - (void)bluetoothAllWaveECG:(NSMutableArray *)ECGArray PPGRedLight:(NSMutableArray *)PPGRedLightArray PPGInfrared:(NSMutableArray *)PPGInfraredArray
 {
     self.ecgView.ecgArray = ECGArray.mutableCopy;
@@ -158,119 +107,53 @@
 }
 
 
-- (void)YFBLEAllWaveDataNotification:(NSNotification *)notification
-{
-    WEAKSELF;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSMutableArray *arr = notification.object;
-        NSLog(@"%@",arr);
-        if (arr.count) {
-             
-            int t = [arr[0] intValue];
-            
-            [arr removeFirstObject];
-            weakSelf.ecgView.ecgArray = [arr subarrayWithRange:NSMakeRange(0, 30)].mutableCopy;
-            weakSelf.PPGIRView.ecgArray = [arr subarrayWithRange:NSMakeRange(60, 30)].mutableCopy;
-            
-            
-            if (t > 0) {
-                int hour = t/3600;
-                int minute = t%3600/60;
-                int second = t%3600%60;
-                
-                NSString *duraStr = [NSString stringWithFormat:@"%02d:%02d:%02d",hour,minute,second];
-                
-                NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"监测时长：  %02d:%02d:%02d",hour,minute,second]];
-
-                [attributedString addAttributes:@{NSForegroundColorAttributeName:kRGBCOLOR(18, 18, 18), NSFontAttributeName:[UIFont systemFontOfSize:16]} range:[[attributedString string] rangeOfString:duraStr]];
-                
-                weakSelf.durationLab.attributedText = attributedString;
-                
-                if (t == 1) {
-                    weakSelf.heartRateLab.hidden = YES;
-                    weakSelf.heartImgView.hidden = YES;
-                }
-                
-                if (weakSelf.leaveSeatAlert.isShow) {
-                    [weakSelf.leaveSeatAlert continueButtonClick];
-                }
-            }
-            if (t == -1) {  //离座标识
-                weakSelf.leaveSeatAlert = [[YFLeaveSeatAlertView alloc] init];
-                [weakSelf.leaveSeatAlert showView];
-                
-                weakSelf.leaveSeatAlert.exitClickBlock = ^{
-                    [weakSelf.navigationController popToRootViewControllerAnimated:YES];
-                };
-            }
-            
-        }
-        
-    });
-}
-
 - (void)bluetoothHeartRate:(long)heartRate
 {
     self.heartRateLab.text = [NSString stringWithFormat:@"心率：%ld bpm", heartRate];
 }
 
+- (void)monitoringDurationOfTheDevice:(long)monitoringTime
+{
+    self.durationLab.text = [NSString stringWithFormat:@"监测时长：%ld S",monitoringTime];
+}
 
-- (void)YFBLEHeartRateNotification:(NSNotification *)noti
+- (void)deviceStatusOfLeaveSeat:(BOOL)isLeaveSeat
 {
     WEAKSELF;
-    dispatch_async(dispatch_get_main_queue(), ^{
+    if (isLeaveSeat) {
+        self.leaveSeatAlert = [[YFLeaveSeatAlertView alloc] init];
+        [self.leaveSeatAlert showView];
         
-        NSDictionary *dic = noti.object;
-        long heartRate = [dic[@"_v"] longValue];  //心跳结果 旧版
-        long heartRateNew = [dic[@"HeartRate"] longValue];  //心跳结果 新版
-        
-        if ([YFCommonCode isBlankString:[dic[@"_v"] stringValue]] && [YFCommonCode isBlankString:[dic[@"HeartRate"] stringValue]]) { //没有心率或心率为空
-//            weakSelf.heartRateLab.hidden = YES;
-//            weakSelf.heartImgView.hidden = YES;
-        } else {
-            weakSelf.heartRateLab.hidden = NO;
-            weakSelf.heartImgView.hidden = NO;
-            
-            if (![YFCommonCode isBlankString:[dic[@"_v"] stringValue]] && heartRate != -1) {
-                
-                NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"心率：%ld bpm", heartRate]];
-                
-                [attributedString addAttributes:@{NSForegroundColorAttributeName:kRGBCOLOR(18, 18, 18), NSFontAttributeName:[UIFont systemFontOfSize:21]} range:[[attributedString string] rangeOfString:[dic[@"_v"] stringValue]]];
-                
-                weakSelf.heartRateLab.attributedText = attributedString;
-                
-                
-            } else if (![YFCommonCode isBlankString:[dic[@"HeartRate"] stringValue]] && heartRateNew != -1) {
-                
-                NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"心率：%ld bpm",heartRateNew]];
-                
-                [attributedString addAttributes:@{NSForegroundColorAttributeName:kRGBCOLOR(18, 18, 18), NSFontAttributeName:[UIFont systemFontOfSize:21]} range:[[attributedString string] rangeOfString:[dic[@"HeartRate"] stringValue]]];
-                
-                weakSelf.heartRateLab.attributedText = attributedString;
-            }
+        self.leaveSeatAlert.exitClickBlock = ^{
+            [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+        };
+    } else {
+        if (self.leaveSeatAlert.isShow) {
+            [self.leaveSeatAlert continueButtonClick];
         }
-        
-        int sample = [dic[@"quality"] intValue];  //采集信号状态  旧版
-        int SampleECG = [dic[@"Sample_ECG"] intValue];  //采集信号状态
-        int SamplePPG = [dic[@"Sample_PPG"] intValue];  //采集信号状态
-        
-        
-        if (sample == -1 || SampleECG == -1) {  //采集不到任何信号
-            weakSelf.coverView.hidden = NO;
-        } else if (sample == 1 || SampleECG == 1) {
-            weakSelf.coverView.hidden = YES;
-        }
-        
-        
-        if (SamplePPG == -1) {  //采集不到任何信号
-            weakSelf.PPGIRCoverView.hidden = NO;
-        } else if (SamplePPG == 1) {
-            weakSelf.PPGIRCoverView.hidden = YES;
-        }
-        
-    });
-
+    }
 }
+
+
+- (void)ECGSignalStatus:(BOOL)signalStatus
+{
+    if (signalStatus) {
+        self.coverView.hidden = YES;
+    } else {
+        self.coverView.hidden = NO;
+    }
+}
+
+- (void)PPGSignalStatus:(BOOL)signalStatus
+{
+    if (signalStatus) {
+        self.PPGIRCoverView.hidden = YES;
+    } else {
+        self.PPGIRCoverView.hidden = NO;
+    }
+}
+
+
 
 - (void)didDisconnectPeripheral:(CBPeripheral *)peripheral
 {
@@ -293,40 +176,12 @@
         };
         [weakSelf.reconnectBleAlert showView];
         
-        [[YFBleManager shareTool] scanPeripheral];
+        [[YFBleManager shareTool] connectPeripheral:peripheral];
         
         weakSelf.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(reconnectTimer) userInfo:nil repeats:YES];
     });
 }
 
-//设备断开连接，进行重连
-- (void)YFDisconnectPeripheralNotification:(NSNotification *)noti
-{
-    WEAKSELF;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-        weakSelf.t = 0;
-        
-        weakSelf.reconnectBleAlert = [[YFReconnectBleAlertView alloc] init];
-        weakSelf.reconnectBleAlert.exitClickBlock = ^{
-            
-            if ([weakSelf.timer isValid]) {
-                [weakSelf.timer invalidate];
-            }
-            weakSelf.timer = nil;
-        
-            [weakSelf.reconnectBleAlert removeView];
-            [weakSelf backAction];
-            
-        };
-        [weakSelf.reconnectBleAlert showView];
-        
-        [[YFBleManager shareTool] scanPeripheral];
-        
-        weakSelf.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(reconnectTimer) userInfo:nil repeats:YES];
-    });
-    
-}
 
 - (void)reconnectTimer
 {
@@ -352,21 +207,6 @@
     
 }
 
-
-- (void)didDiscoverPeripheral:(CBPeripheral *)peripheral
-{
-    WEAKSELF;
-    dispatch_async(dispatch_get_main_queue(), ^{
-
-        if (![peripheral.name isEqualToString:@"xinxiangsui"]) {
-            NSArray *arr = [peripheral.name componentsSeparatedByString:@"."];
-            if ([weakSelf.serialNumber isEqualToString:arr[1]]) {
-                [[YFBleManager shareTool] connectPeripheral:peripheral];
-                return;
-            }
-        }
-    });
-}
 
 
 - (void)didConnectSuccessPeripheral:(CBPeripheral *)peripheral {
@@ -467,7 +307,7 @@
         _heartRateLab.font = [UIFont systemFontOfSize:15];
         
         _heartRateLab.textAlignment = NSTextAlignmentLeft;
-        _heartRateLab.hidden = YES;
+//        _heartRateLab.hidden = YES;
 
     }
     return _heartRateLab;
@@ -493,7 +333,7 @@
         _durationLab = [[UILabel alloc] initWithFrame:CGRectMake(self.heartRateLab.right, self.ecgView.bottom + 20, [UIScreen mainScreen].bounds.size.width - 25 - self.heartRateLab.right, 25)];
         _durationLab.textColor = kRGBCOLOR(102, 102, 102);
         _durationLab.font = [UIFont systemFontOfSize:15];
-        _durationLab.text = @"监测时长：  00:00:00";
+        _durationLab.text = @"监测时长：";
         _durationLab.textAlignment = NSTextAlignmentRight;
         _durationLab.centerY = self.heartRateLab.centerY;
     }

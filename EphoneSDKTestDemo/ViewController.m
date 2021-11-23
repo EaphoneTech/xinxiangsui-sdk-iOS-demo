@@ -35,6 +35,7 @@
     
     [self setupUI];
     
+    [[YFBleManager shareTool] initManager];
 }
 
 
@@ -76,31 +77,38 @@
 }
 
 - (void)connWifi:(id)sender {
-    YFBluetoothScanViewController *conn = [[YFBluetoothScanViewController alloc] init];
-    [self.navigationController pushViewController:conn animated:YES];
+    
+    if ([YFBleManager shareTool].peripheralState != CBManagerStatePoweredOn) {
+
+        [self BAAlertWithTitle:@"请先将手机蓝牙与设备连接\n打开蓝牙" message:@"" andOthers:@[@"确定"] animated:YES action:^(NSInteger index) {
+
+        }];
+        return;
+    } else {
+
+        YFBluetoothScanViewController *conn = [[YFBluetoothScanViewController alloc] init];
+        [self.navigationController pushViewController:conn animated:YES];
+        
+    }
 }
 
 
 - (void)waveFormAction:(id)sender {
-    CGFloat t = 0.10;
+    
+    if ([YFBleManager shareTool].peripheralState != CBManagerStatePoweredOn) {
 
-    WEAKSELF;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(t * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if ([YFBleManager shareTool].peripheralState != CBManagerStatePoweredOn) {
-            
-            [weakSelf BAAlertWithTitle:@"请先将手机蓝牙与设备连接\n打开蓝牙" message:@"" andOthers:@[@"确定"] animated:YES action:^(NSInteger index) {
-                
-            }];
-            return;
-        } else {
-            
-            weakSelf.bluetooth = [[YFBluetooth alloc] init];
-            weakSelf.bluetooth.delegate = weakSelf;
-            
-            [[YFBleManager shareTool] scanPeripheral];
-            
-        }
-    });
+        [self BAAlertWithTitle:@"请先将手机蓝牙与设备连接\n打开蓝牙" message:@"" andOthers:@[@"确定"] animated:YES action:^(NSInteger index) {
+
+        }];
+        return;
+    } else {
+
+        self.bluetooth = [[YFBluetooth alloc] init];
+        self.bluetooth.delegate = self;
+        
+        [[YFBleManager shareTool] scanPeripheral];
+        
+    }
 }
 
 
@@ -131,7 +139,7 @@
         weakSelf.bluetooth.delegate = nil;
         weakSelf.bluetooth = nil;
         YFECGWaveFormController *ecgWave = [[YFECGWaveFormController alloc] init];
-        ecgWave.serialNumber = self.serialNumField.text;
+        ecgWave.peripheral = peripheral;
         [weakSelf.navigationController pushViewController:ecgWave animated:YES];
     });
 }

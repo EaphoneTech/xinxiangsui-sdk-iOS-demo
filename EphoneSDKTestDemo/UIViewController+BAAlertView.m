@@ -290,8 +290,6 @@ static NSMutableArray *fields = nil;
         Ivar ivar = ivars[i];
         NSString *ivarName = [NSString stringWithCString:ivar_getName(ivar) encoding:NSUTF8StringEncoding];
         
-        NSLog(@"%@",ivarName);
-        
         if ([ivarName isEqualToString:@"_titleTextColor"]) {
             
 //            [alertActtion setValue:kColorTheme forKey:@"titleTextColor"];

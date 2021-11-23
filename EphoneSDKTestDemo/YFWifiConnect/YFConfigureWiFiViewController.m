@@ -58,27 +58,8 @@
 }
 
 
-- (void)didDiscoverPeripheral:(CBPeripheral *)peripheral
-{
-    WEAKSELF;
-    dispatch_async(dispatch_get_main_queue(), ^{
-
-        if ([peripheral.name isEqualToString:@"xinxiangsui"]) return;
-        NSArray *arr = [peripheral.name componentsSeparatedByString:@"."];
-        if ([weakSelf.serialNumber isEqualToString:arr[1]]) {
-            [[YFBleManager shareTool] connectPeripheral:peripheral];
-            return;
-        }
-    });
-
-}
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
-    self.bluetooth.delegate = self;
-    
-    [[YFBleManager shareTool] scanPeripheral];
     
     NSDictionary *netInfo = [self currentWifiSSID];
     self.ssidStr = [netInfo objectForKey:@"SSID"];
@@ -211,9 +192,7 @@
             return;
         }
         
-        [YFBleManager shareTool].SSID = self.wifiField.text;
-        [YFBleManager shareTool].PASSWORD = self.pwdField.text;
-        [[YFBleManager shareTool] DiscoverServices];
+        [[YFBleManager shareTool] connectToInternetWithWifiName:self.wifiField.text wifiPassword:self.pwdField.text];
         
         
 //        self.bluetooth.delegate = nil;
@@ -238,6 +217,11 @@
         [weakSelf.navigationController popToRootViewControllerAnimated:YES];
     });
     
+}
+
+- (void)didFailToConnectToInternet:(NSString *)error
+{
+    NSLog(@"设备配网失败");
 }
 
 #pragma mark - 明密文切换

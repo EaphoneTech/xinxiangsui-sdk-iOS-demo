@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/EphoneSDK.h</key>
 		<data>
-		DaM41Tdd5PnUssKYU/luIsy5Eo0=
+		Xv1Vq+SNdiyfrvlSsG4WgQ4PSus=
 		</data>
 		<key>Headers/PrefixHeader.pch</key>
 		<data>
@@ -14,39 +14,15 @@
 		</data>
 		<key>Headers/YFBleManager.h</key>
 		<data>
-		sYTx3Ls8IIXrrIjL7BxBq73Y0uY=
+		uqX3wDhB0oQs5E1Njkdb0ZyJGvs=
 		</data>
 		<key>Headers/YFBluetooth.h</key>
 		<data>
-		5GFhqol/Tm7UCRqrCFAyE18IBxM=
+		mXeKpdN6wa9sEIScThOVsgREDug=
 		</data>
-		<key>Headers/YFDeviceAPIHelpers.h</key>
+		<key>Headers/YFUncaughtExceptionHandler.h</key>
 		<data>
-		QDhh3l8jZxxr+HfS9Q/EAuB3364=
-		</data>
-		<key>Headers/YFDeviceManager+YFProduct.h</key>
-		<data>
-		WdbqKXf9LQi2okbUh78IWj/ydrM=
-		</data>
-		<key>Headers/YFDeviceManager.h</key>
-		<data>
-		mrEERQXkAk34iSSMgznsQhFbs0Y=
-		</data>
-		<key>Headers/YFMQTTClient.h</key>
-		<data>
-		P6h5HbIFfZVe2gY07izdoD9JjsE=
-		</data>
-		<key>Headers/YFMqttServerModel.h</key>
-		<data>
-		Mh7Ny7C/+L+h8mfMKKWo0+dGVt0=
-		</data>
-		<key>Headers/YFNetworkDataModel.h</key>
-		<data>
-		ZQ9R/dzj0qG4ON2gPEjFxTxurKc=
-		</data>
-		<key>Headers/YFNetworkTool.h</key>
-		<data>
-		6Ldk7whdpa0iK8KjZ/QynShYc24=
+		y6hl72HK1tTTZRMlUY9ApqFzcwI=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -56,6 +32,34 @@
 		<data>
 		5P/tBXmmWGmx4PEKdvbgmd68KYw=
 		</data>
+		<key>PrivateHeaders/YFDeviceAPIHelpers.h</key>
+		<data>
+		QDhh3l8jZxxr+HfS9Q/EAuB3364=
+		</data>
+		<key>PrivateHeaders/YFDeviceManager+YFProduct.h</key>
+		<data>
+		WdbqKXf9LQi2okbUh78IWj/ydrM=
+		</data>
+		<key>PrivateHeaders/YFDeviceManager.h</key>
+		<data>
+		mrEERQXkAk34iSSMgznsQhFbs0Y=
+		</data>
+		<key>PrivateHeaders/YFMQTTClient.h</key>
+		<data>
+		P6h5HbIFfZVe2gY07izdoD9JjsE=
+		</data>
+		<key>PrivateHeaders/YFMqttServerModel.h</key>
+		<data>
+		Mh7Ny7C/+L+h8mfMKKWo0+dGVt0=
+		</data>
+		<key>PrivateHeaders/YFNetworkDataModel.h</key>
+		<data>
+		ZQ9R/dzj0qG4ON2gPEjFxTxurKc=
+		</data>
+		<key>PrivateHeaders/YFNetworkTool.h</key>
+		<data>
+		6Ldk7whdpa0iK8KjZ/QynShYc24=
+		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -63,11 +67,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DaM41Tdd5PnUssKYU/luIsy5Eo0=
+			Xv1Vq+SNdiyfrvlSsG4WgQ4PSus=
 			</data>
 			<key>hash2</key>
 			<data>
-			kILSBCt57LSiJfsfqTdIeJWnL8fvY44ziH3ae5EGZ8o=
+			k4xVDYkQ5LVOiZP/tcfSsFhXQTPRH94wAK5uZ+vz2NY=
 			</data>
 		</dict>
 		<key>Headers/PrefixHeader.pch</key>
@@ -85,99 +89,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sYTx3Ls8IIXrrIjL7BxBq73Y0uY=
+			uqX3wDhB0oQs5E1Njkdb0ZyJGvs=
 			</data>
 			<key>hash2</key>
 			<data>
-			ogREWYOoy5lr7jnXtm1sUVBncvhThyuOpefce7sXe3A=
+			LVSE9Ugl8dMOa+qZXSByLi3cSDMy2MMotzOXc7UaYPo=
 			</data>
 		</dict>
 		<key>Headers/YFBluetooth.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5GFhqol/Tm7UCRqrCFAyE18IBxM=
+			mXeKpdN6wa9sEIScThOVsgREDug=
 			</data>
 			<key>hash2</key>
 			<data>
-			c1E6skFsAGKc7gDqz3bJdPpKxcbO0vbRfYGNQ4PsOgQ=
+			QhXgqsvrYj9inT9FYohVB28DU1Qv6HVyk3UQh0M+Hjs=
 			</data>
 		</dict>
-		<key>Headers/YFDeviceAPIHelpers.h</key>
+		<key>Headers/YFUncaughtExceptionHandler.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QDhh3l8jZxxr+HfS9Q/EAuB3364=
+			y6hl72HK1tTTZRMlUY9ApqFzcwI=
 			</data>
 			<key>hash2</key>
 			<data>
-			KTFDc83ZdsNQVz+r3oroNTwbNTwLa8opCuJSaTW73sM=
-			</data>
-		</dict>
-		<key>Headers/YFDeviceManager+YFProduct.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			WdbqKXf9LQi2okbUh78IWj/ydrM=
-			</data>
-			<key>hash2</key>
-			<data>
-			a1IwVvZwCP4prOrfn0NGyq+nfQ+u60y54dfE3I/WMYY=
-			</data>
-		</dict>
-		<key>Headers/YFDeviceManager.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			mrEERQXkAk34iSSMgznsQhFbs0Y=
-			</data>
-			<key>hash2</key>
-			<data>
-			9UZnUJtu8eMH/BNk7ngYi+b6psf5GhmUS+pQXXJ7Dnk=
-			</data>
-		</dict>
-		<key>Headers/YFMQTTClient.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			P6h5HbIFfZVe2gY07izdoD9JjsE=
-			</data>
-			<key>hash2</key>
-			<data>
-			ZvfdboUmC7ETAsSKiMKwVwkQfkZEnSiA9iP4sa+QV2M=
-			</data>
-		</dict>
-		<key>Headers/YFMqttServerModel.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Mh7Ny7C/+L+h8mfMKKWo0+dGVt0=
-			</data>
-			<key>hash2</key>
-			<data>
-			NCSgd/KnD4VQSI8wSYLnN3jW3WXPe8AiT8K1kg5pHNk=
-			</data>
-		</dict>
-		<key>Headers/YFNetworkDataModel.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ZQ9R/dzj0qG4ON2gPEjFxTxurKc=
-			</data>
-			<key>hash2</key>
-			<data>
-			LDI5PXGFU49X0OZFtaXLoAW4aqmcm4Fn9Che+bNC1ok=
-			</data>
-		</dict>
-		<key>Headers/YFNetworkTool.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			6Ldk7whdpa0iK8KjZ/QynShYc24=
-			</data>
-			<key>hash2</key>
-			<data>
-			kgqcOIpdH5/uc2fwOzvG8iJSfjOCT2cJZZ4EcvYrxrU=
+			oLlXoVVNOBdkH0c5SYPHVDjmG3bQx6gBRL2H1+vbSSY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -189,6 +127,83 @@
 			<key>hash2</key>
 			<data>
 			Pt2ppD6TiGFWZWYu0ll+bhuPEDszit6VdalvoXUmCMY=
+			</data>
+		</dict>
+		<key>PrivateHeaders/YFDeviceAPIHelpers.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			QDhh3l8jZxxr+HfS9Q/EAuB3364=
+			</data>
+			<key>hash2</key>
+			<data>
+			KTFDc83ZdsNQVz+r3oroNTwbNTwLa8opCuJSaTW73sM=
+			</data>
+		</dict>
+		<key>PrivateHeaders/YFDeviceManager+YFProduct.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WdbqKXf9LQi2okbUh78IWj/ydrM=
+			</data>
+			<key>hash2</key>
+			<data>
+			a1IwVvZwCP4prOrfn0NGyq+nfQ+u60y54dfE3I/WMYY=
+			</data>
+		</dict>
+		<key>PrivateHeaders/YFDeviceManager.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			mrEERQXkAk34iSSMgznsQhFbs0Y=
+			</data>
+			<key>hash2</key>
+			<data>
+			9UZnUJtu8eMH/BNk7ngYi+b6psf5GhmUS+pQXXJ7Dnk=
+			</data>
+		</dict>
+		<key>PrivateHeaders/YFMQTTClient.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			P6h5HbIFfZVe2gY07izdoD9JjsE=
+			</data>
+			<key>hash2</key>
+			<data>
+			ZvfdboUmC7ETAsSKiMKwVwkQfkZEnSiA9iP4sa+QV2M=
+			</data>
+		</dict>
+		<key>PrivateHeaders/YFMqttServerModel.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Mh7Ny7C/+L+h8mfMKKWo0+dGVt0=
+			</data>
+			<key>hash2</key>
+			<data>
+			NCSgd/KnD4VQSI8wSYLnN3jW3WXPe8AiT8K1kg5pHNk=
+			</data>
+		</dict>
+		<key>PrivateHeaders/YFNetworkDataModel.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ZQ9R/dzj0qG4ON2gPEjFxTxurKc=
+			</data>
+			<key>hash2</key>
+			<data>
+			LDI5PXGFU49X0OZFtaXLoAW4aqmcm4Fn9Che+bNC1ok=
+			</data>
+		</dict>
+		<key>PrivateHeaders/YFNetworkTool.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6Ldk7whdpa0iK8KjZ/QynShYc24=
+			</data>
+			<key>hash2</key>
+			<data>
+			kgqcOIpdH5/uc2fwOzvG8iJSfjOCT2cJZZ4EcvYrxrU=
 			</data>
 		</dict>
 	</dict>

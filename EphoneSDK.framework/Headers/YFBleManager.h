@@ -21,16 +21,15 @@
 @property (nonatomic, assign) CBManagerState peripheralState;
 
 
-/// Wi-Fi账号
-@property (nonatomic, strong) NSString *SSID;
-/// Wi-Fi密码
-@property (nonatomic, strong) NSString *PASSWORD;
-
 /// 是否有PPG信号  有YES：同时有ECG和PPG数据， 没有NO：仅有ECG数据
 @property (nonatomic, assign) BOOL isHasPPG;
 
 
 + (instancetype)shareTool;
+
+
+/// 初始化时  仅调用一次
+- (void) initManager;
 
 /// 扫描外围设备
 - (void)scanPeripheral;
@@ -48,6 +47,12 @@
 
 /// 获取设备中的服务
 - (void)DiscoverServices;
+
+
+/// 设备配网
+/// @param wifiName  Wi-Fi name
+/// @param wifiPassword Wi-Fi 密码
+- (void)connectToInternetWithWifiName:(NSString *)wifiName wifiPassword:(NSString *)wifiPassword;
 
 
 @end

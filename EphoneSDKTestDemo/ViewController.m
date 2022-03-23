@@ -145,9 +145,10 @@
 }
 
 
-- (void)printLogData:(YFNetworkDataModel *)responseModel
+- (void)printLogData:(id)responseObject
 {
-    NSDictionary *dic = [responseModel mj_keyValues];
+//    NSDictionary *dic = [responseObject mj_keyValues];
+    NSDictionary *dic = (NSDictionary *)responseObject;
 
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
         NSString *jsonString;

@@ -23,11 +23,12 @@
 //********************************************
 
 #import "WJJMD5Tool.h"
-#import "YFNetworkTool.h"
 #import "YFNetworkDataModel.h"
+#import "YFNetworkTool.h"
 #import "YFKitCommonCode.h"
 #import "YFBleManager.h"
 #import "YFDeviceManager.h"
 #import "YFDeviceAPIHelpers.h"
+#import "YFNetworkTool+YFRequest.h"
 
 #endif /* PrefixHeader_pch */

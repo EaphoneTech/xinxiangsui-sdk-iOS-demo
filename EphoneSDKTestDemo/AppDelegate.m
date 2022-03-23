@@ -6,7 +6,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "YFBluetoothScanViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +19,7 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
 
-    ViewController *mainView = [[ViewController alloc]init];
+    YFBluetoothScanViewController *mainView = [[YFBluetoothScanViewController alloc]init];
 
     UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:mainView];
 
@@ -29,14 +29,30 @@
 
     [self.window makeKeyAndVisible];
     
+    [self getGetAccessToken];
     
     [YFUncaughtExceptionHandler setDefaultHandler];
     
 //    [self exceptionHandler];
-
+    
     
     return YES;
 }
+
+- (void)getGetAccessToken {
+    WEAKSELF;
+    [YFDeviceAPIHelpers YFGetAccessTokenWithAppid:@"62187baa88a1c91b2c18cbd1" secret:@"c21f523dadcd459082397022e01de606" grantType:@"client_credential" success:^(id responseObject) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"%@", responseObject);
+            weakSelf.access_token = responseObject[@"access_token"];
+        });
+        
+    } failure:^(NSError *error, NSString *errorDes) {
+        NSLog(@"%@,%@",error, errorDes);
+        [SVProgressHUD showErrorWithText:@"获取accessToken失败"];
+    }];
+}
+
 
 #pragma mark - 崩溃日志
 - (void)exceptionHandler {

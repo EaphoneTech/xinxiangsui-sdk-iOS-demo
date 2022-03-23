@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "YFBluetooth.h"
 
-//@protocol YFBleManagerDelegate;
 
 @interface YFBleManager : NSObject
 
@@ -19,6 +19,9 @@
 @property (nonatomic, strong) CBPeripheral *cbPeripheral;
 /// 手机蓝牙状态
 @property (nonatomic, assign) CBManagerState peripheralState;
+
+
+@property (nonatomic, strong) YFBluetooth *bluetooth;
 
 
 /// 是否有PPG信号  有YES：同时有ECG和PPG数据， 没有NO：仅有ECG数据

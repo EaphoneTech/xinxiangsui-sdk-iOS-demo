@@ -13,6 +13,7 @@
 #import "YFLeaveSeatAlertView.h"
 #import "YFECGCoverView.h"
 #import "YFReconnectBleAlertView.h"
+#import "AppDelegate.h"
 //#import "YFECGBLEConnectFailController.h"
 
 
@@ -27,6 +28,8 @@
 @property (nonatomic, strong) UIImageView *heartImgView;
 @property (nonatomic, strong) UILabel *heartRateLab;
 @property (nonatomic, strong) UILabel *durationLab;  //测量时长
+@property (nonatomic, strong) UIButton *checkBtn;  //查看设备最新的健康数据分析结果
+@property (nonatomic, strong) UITextView *textView;  
 
 
 @property (nonatomic, strong) YFReconnectBleAlertView *reconnectBleAlert;
@@ -38,7 +41,7 @@
 
 @property (nonatomic, strong) UIScrollView *scrollView;  //页面内容过长，滚动显示
 
-@property (nonatomic, strong) YFBluetooth *bluetooth;
+//@property (nonatomic, strong) YFBluetooth *bluetooth;
 
 @end
 
@@ -53,8 +56,8 @@
     
     [self setupUI];
     
-    self.bluetooth = [[YFBluetooth alloc] init];
-    self.bluetooth.delegate = self;
+    [YFBleManager shareTool].bluetooth = [[YFBluetooth alloc] init];
+    [YFBleManager shareTool].bluetooth.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -89,6 +92,7 @@
     [self.waveFormView addSubview:self.heartRateLab];
 //    [self.waveFormView addSubview:self.heartImgView];
     [self.waveFormView addSubview:self.durationLab];
+    [self.view addSubview:self.checkBtn];
 
 }
 
@@ -223,12 +227,57 @@
     });
 }
 
+- (void)checkDataAction {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    NSArray *arr = [self.peripheral.name componentsSeparatedByString:@"."];
+    NSString *serialNumber = arr[1];
+    
+    [YFDeviceAPIHelpers YFLastOfDeviceDataWithAccessToken:appDelegate.access_token deviceid:serialNumber success:^(id responseObject) {
+        NSLog(@"%@", responseObject);
+
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:responseObject options:NSJSONWritingPrettyPrinted error:nil];
+            NSString *jsonString;
+
+        jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+
+        self.textView.text = jsonString;
+        
+    } failure:^(NSError *error, NSString *errorDes) {
+        NSLog(@"%ld,%@",(long)error.code, errorDes);
+        self.textView.text = [NSString stringWithFormat:@"%ld,%@", (long)error.code, errorDes];
+    }];
+}
+
+
+- (UIButton *)checkBtn
+{
+    if (!_checkBtn) {
+        _checkBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _checkBtn.frame = CGRectMake(60, self.waveFormView.bottom + 80, kScreenW - 120, 50);
+    
+        [_checkBtn setTitle:@"查看最新的数据分析结果" forState:UIControlStateNormal];
+        _checkBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+        [_checkBtn setBackgroundColor:[UIColor blueColor]];
+        
+        [_checkBtn addTarget:self action:@selector(checkDataAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _checkBtn;
+}
+
+- (UITextView *)textView {
+    if (!_textView) {
+        _textView = [[UITextView alloc] initWithFrame:CGRectMake(0, self.checkBtn.bottom, self.view.width, 100)];
+        [self.view addSubview:_textView];
+    }
+    return _textView;
+}
 
 
 - (void)backAction
 {
     
-    [[YFBleManager shareTool] cancelPeripheralConnection] ;
+    [[YFBleManager shareTool] cancelPeripheralConnection];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -343,10 +392,10 @@
 
 - (void)dealloc
 {
-
     if (self.leaveSeatAlert.isShow) {
         [self.leaveSeatAlert removeView];
     }
+    [[YFBleManager shareTool] cancelPeripheralConnection];
 }
 
 @end

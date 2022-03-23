@@ -9,5 +9,6 @@ pod 'AFNetworking'
 pod 'MJExtension'
 pod 'YYKit'
 pod 'MQTTClient'
+pod 'SVProgressHUD'
 
 end

@@ -8,6 +8,12 @@
 
 #import "YFBluetoothScanViewController.h"
 #import "YFConfigureWiFiViewController.h"
+#import "YFECGWaveFormController.h"
+
+typedef enum : NSUInteger {
+    YFFunctionWifi,
+    YFFunctionWave,
+} YFFunction;
 
 @interface YFBluetoothScanViewController ()<UITableViewDelegate,UITableViewDataSource,YFBluetoothDelegate>
 
@@ -17,7 +23,9 @@
 
 @property (nonatomic, strong) CBPeripheral *peripheral;
 
-@property (nonatomic, strong) YFBluetooth *bluetooth;
+//@property (nonatomic, strong) YFBluetooth *bluetooth;
+
+@property (nonatomic, assign) YFFunction function;
 
 @end
 
@@ -30,7 +38,9 @@
     
     self.navigationItem.title = @"扫描附近设备";
     
-    self.bluetooth = [[YFBluetooth alloc] init];
+//    self.bluetooth = [[YFBluetooth alloc] init];
+    
+    [[YFBleManager shareTool] initManager];
     
 }
 
@@ -38,11 +48,11 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [YFBleManager shareTool].bluetooth.delegate = self;
     
-    self.bluetooth.delegate = self;
-    [self.deviceArr removeAllObjects];
+//    [self.deviceArr removeAllObjects];
 
-    [[YFBleManager shareTool] scanPeripheral];
+//    [[YFBleManager shareTool] scanPeripheral];
     
 }
 
@@ -95,10 +105,15 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     CBPeripheral *peripheral = self.deviceArr[indexPath.row];
-
     self.peripheral = peripheral;
     
-    [[YFBleManager shareTool] connectPeripheral:peripheral];
+    [self BAAlertWithTitle:@"请选择操作" message:@"" andOthers:@[@"设备配网", @"实时波形"] animated:YES action:^(NSInteger index) {
+        [SVProgressHUD loadingWithText:@""];
+        self.function = index;
+        [[YFBleManager shareTool] connectPeripheral:peripheral];
+    }];
+    
+    
     
 }
 
@@ -108,13 +123,53 @@
     WEAKSELF;
     dispatch_async(dispatch_get_main_queue(), ^{
         
-        weakSelf.bluetooth.delegate = nil;
+//        weakSelf.bluetooth.delegate = nil;
+        [SVProgressHUD dismiss];
+        switch (weakSelf.function) {
+            case YFFunctionWifi:
+            {
+                YFConfigureWiFiViewController *wifi = [[YFConfigureWiFiViewController alloc] init];
+                wifi.peripheral = weakSelf.peripheral;
+                [weakSelf.navigationController pushViewController:wifi animated:YES];
+            }
+                break;
+            case YFFunctionWave:
+            {
+                YFECGWaveFormController *ecgWave = [[YFECGWaveFormController alloc] init];
+                ecgWave.peripheral = peripheral;
+                [weakSelf.navigationController pushViewController:ecgWave animated:YES];
+            }
+                break;
+                
+            default:
+                break;
+        }
         
-        YFConfigureWiFiViewController *wifi = [[YFConfigureWiFiViewController alloc] init];
-        wifi.peripheral = weakSelf.peripheral;
-        [weakSelf.navigationController pushViewController:wifi animated:YES];
+       
    
     });
+}
+
+
+- (void)bluetoothDidUpdateState:(CBManagerState)peripheralState {
+    WEAKSELF;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (peripheralState != CBManagerStatePoweredOn) {
+
+            [weakSelf.deviceArr removeAllObjects];
+            [weakSelf.deviceTableView reloadData];
+            [weakSelf BAAlertWithTitle:@"请先将手机蓝牙与设备连接\n打开蓝牙" message:@"" andOthers:@[@"确定"] animated:YES action:^(NSInteger index) {
+
+            }];
+            return;
+        } else {
+
+            [[YFBleManager shareTool] scanPeripheral];
+            
+        }
+    });
+    
+
 }
 
 - (UITableView *)deviceTableView

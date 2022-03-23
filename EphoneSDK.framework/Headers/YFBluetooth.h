@@ -13,8 +13,6 @@
 
 @property (nonatomic, weak) id <YFBluetoothDelegate> delegate;
 
-//- (instancetype)initWithDelegate:(UIViewController *)viewController;
-
 @end
 
 @protocol YFBluetoothDelegate <NSObject>

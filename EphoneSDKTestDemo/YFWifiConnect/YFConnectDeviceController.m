@@ -16,7 +16,7 @@
 
 @interface YFConnectDeviceController ()<YFBluetoothDelegate>
 
-@property (nonatomic, strong) YFBluetooth *bluetooth;
+//@property (nonatomic, strong) YFBluetooth *bluetooth;
 
 @property (nonatomic, strong) YFConnectView *connectView;
 
@@ -68,8 +68,8 @@
     [_timer fire];
     
     
-    self.bluetooth = [[YFBluetooth alloc] init];
-    self.bluetooth.delegate = self;
+//    self.bluetooth = [[YFBluetooth alloc] init];
+    [YFBleManager shareTool].bluetooth.delegate = self;
 
 }
 
@@ -95,8 +95,9 @@
 
 ///发起设备绑定
 - (void)bindingDevice{
-    
+    /*
     WEAKSELF;
+    
     
     NSMutableDictionary * param = [NSMutableDictionary dictionary];
 //    [param setValue:@"096efa48-385b-11ec-9e42-8dcd1021ec73" forKey:@"token"];
@@ -131,6 +132,7 @@
         });
         
     }];
+    */
     
 }
 
@@ -138,6 +140,7 @@
 
 - (void)bindStatus
 {
+    /*
     WEAKSELF;
     NSMutableDictionary *param = [NSMutableDictionary dictionaryWithObjectsAndKeys:self.serialNumber, @"serialNumber", nil];
     [[YFNetworkTool shareTool] GET:@"g08/v1/bind/status/" parameters:param success:^(YFNetworkDataModel *responseModel) {
@@ -222,6 +225,7 @@
             
         });
     }];
+    */
 }
 
 

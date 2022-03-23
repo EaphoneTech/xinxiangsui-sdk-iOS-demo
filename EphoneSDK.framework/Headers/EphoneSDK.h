@@ -18,5 +18,7 @@ FOUNDATION_EXPORT const unsigned char EphoneSDKVersionString[];
 #import <EphoneSDK/YFNetworkTool.h>
 #import <EphoneSDK/YFBleManager.h>
 #import <EphoneSDK/YFBluetooth.h>
+#import <EphoneSDK/YFDeviceAPIHelpers.h>
 #import <EphoneSDK/YFUncaughtExceptionHandler.h>
+//#import <EphoneSDK/YFNetworkDataModel.h>
 

@@ -30,7 +30,7 @@
 ///BSSID
 @property(nonatomic,copy)NSString * bssid;
 
-@property (nonatomic, strong) YFBluetooth *bluetooth;
+//@property (nonatomic, strong) YFBluetooth *bluetooth;
 
 @end
 
@@ -51,9 +51,9 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterForeground) name:UIApplicationWillEnterForegroundNotification object:nil];
     
-    self.bluetooth = [[YFBluetooth alloc] init];
+//    self.bluetooth = [[YFBluetooth alloc] init];
     
-    self.bluetooth.delegate = self;
+    [YFBleManager shareTool].bluetooth.delegate = self;
     
 }
 
@@ -191,7 +191,7 @@
 //            [SVProgressHUD showErrorWithText:@"未连接到WiFi"];
             return;
         }
-        
+        [SVProgressHUD loadingWithText:@""];
         [[YFBleManager shareTool] connectToInternetWithWifiName:self.wifiField.text wifiPassword:self.pwdField.text];
         
         
@@ -214,6 +214,9 @@
     WEAKSELF;
     dispatch_async(dispatch_get_main_queue(), ^{
         NSLog(@"设备配网成功");
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showSuccessWithText:@"设备配网成功"];
+        [[YFBleManager shareTool] cancelPeripheralConnection];
         [weakSelf.navigationController popToRootViewControllerAnimated:YES];
     });
     
@@ -221,7 +224,8 @@
 
 - (void)didFailToConnectToInternet:(NSString *)error
 {
-    NSLog(@"设备配网失败");
+    [SVProgressHUD dismiss];
+    [SVProgressHUD showSuccessWithText:@"设备配网失败"];
 }
 
 #pragma mark - 明密文切换

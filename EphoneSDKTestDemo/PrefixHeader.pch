@@ -15,10 +15,11 @@
 #import <AFNetworking.h>
 #import <MJExtension.h>
 #import <MQTTClient/MQTTClient.h>
+#import <SVProgressHUD.h>
 
 #import <EphoneSDK/EphoneSDK.h>
 
-
+#import "SVProgressHUD+YFToast.h"
 #import "UIViewController+BAAlertView.h"
 #import "YFCommonCode.h"
 #import "YFDefaultMacro.h"

@@ -228,6 +228,18 @@
     [SVProgressHUD showSuccessWithText:@"设备配网失败"];
 }
 
+
+- (void)didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
+    
+    WEAKSELF;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [SVProgressHUD showSuccessWithText:@"设备已经断开连接"];
+        [[YFBleManager shareTool] cancelPeripheralConnection];
+        [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+    });
+    
+}
+
 #pragma mark - 明密文切换
 - (void)eyeBtnClick:(UIButton *)button
 {

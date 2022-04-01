@@ -93,7 +93,7 @@
 {
     if (!_messageLab) {
         _messageLab = [[UILabel alloc] initWithFrame:CGRectMake(18, self.titleLab.bottom + 20, self.alertView.width - 36, 30)];
-        _messageLab.text = @"蓝牙意外断开，正在尝试重连...";
+        _messageLab.text = @"设备意外断开，正在尝试重连...";
         _messageLab.textColor = kRGBCOLOR(102, 102, 102);
         _messageLab.font = [UIFont systemFontOfSize:16];
         _messageLab.numberOfLines = 0;

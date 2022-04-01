@@ -30,13 +30,18 @@
 - (void)didScanDevicesPeripheral:(CBPeripheral *)peripheral;
 
 
-/// 设备连接成功
+/// 设备连接成功 -- 蓝牙
 /// @param peripheral 连接成功设备
 - (void)didConnectSuccessPeripheral:(CBPeripheral *)peripheral;
 
+
+/// 设备连接失败 -- 蓝牙
+/// @param peripheral 连接失败设备
+- (void)didConnectFailPeripheral:(CBPeripheral *)peripheral error:(NSError *)error;
+
 /// 设备连接断开
 /// @param peripheral 连接失败的设备
-- (void)didDisconnectPeripheral:(CBPeripheral *)peripheral;
+- (void)didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error;
 
 
 /// 配网成功

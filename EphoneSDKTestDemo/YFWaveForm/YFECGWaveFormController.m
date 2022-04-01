@@ -124,17 +124,23 @@
 - (void)deviceStatusOfLeaveSeat:(BOOL)isLeaveSeat
 {
     WEAKSELF;
+//    if (isLeaveSeat) {
+//        self.leaveSeatAlert = [[YFLeaveSeatAlertView alloc] init];
+//        [self.leaveSeatAlert showView];
+//
+//        self.leaveSeatAlert.exitClickBlock = ^{
+//            [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+//        };
+//    } else {
+//        if (self.leaveSeatAlert.isShow) {
+//            [self.leaveSeatAlert continueButtonClick];
+//        }
+//    }
+    
     if (isLeaveSeat) {
-        self.leaveSeatAlert = [[YFLeaveSeatAlertView alloc] init];
-        [self.leaveSeatAlert showView];
-        
-        self.leaveSeatAlert.exitClickBlock = ^{
-            [weakSelf.navigationController popToRootViewControllerAnimated:YES];
-        };
+        self.checkBtn.hidden = NO;
     } else {
-        if (self.leaveSeatAlert.isShow) {
-            [self.leaveSeatAlert continueButtonClick];
-        }
+        self.checkBtn.hidden = YES;
     }
 }
 
@@ -157,9 +163,7 @@
     }
 }
 
-
-
-- (void)didDisconnectPeripheral:(CBPeripheral *)peripheral
+- (void)didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
 {
     WEAKSELF;
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -228,13 +232,15 @@
 }
 
 - (void)checkDataAction {
+    [SVProgressHUD loadingWithText:@""];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     NSArray *arr = [self.peripheral.name componentsSeparatedByString:@"."];
     NSString *serialNumber = arr[1];
     
     [YFDeviceAPIHelpers YFLastOfDeviceDataWithAccessToken:appDelegate.access_token deviceid:serialNumber success:^(id responseObject) {
-        NSLog(@"%@", responseObject);
+        [SVProgressHUD dismiss];
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(checkDataAction) object:nil];
 
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:responseObject options:NSJSONWritingPrettyPrinted error:nil];
             NSString *jsonString;
@@ -244,8 +250,25 @@
         self.textView.text = jsonString;
         
     } failure:^(NSError *error, NSString *errorDes) {
-        NSLog(@"%ld,%@",(long)error.code, errorDes);
-        self.textView.text = [NSString stringWithFormat:@"%ld,%@", (long)error.code, errorDes];
+        if (error.code == 8008002 || error.code == 8008004) {  //数据上传中/数据分析中
+            [self performSelector:@selector(checkDataAction) withObject:nil afterDelay:2.0];
+        } else {
+            [SVProgressHUD dismiss];
+            switch (error.code) {
+                case YFErrCodeHealthDataNotExit:
+                    self.textView.text = @"数据不存在";
+                    break;
+                case YFErrCodeHealthDataTimeShort:
+                    self.textView.text = @"数据时长不够";
+                    break;
+                    
+                default:
+                    self.textView.text = [NSString stringWithFormat:@"%ld,%@", (long)error.code, errorDes];
+                    break;
+            }
+            
+        }
+        
     }];
 }
 
@@ -261,6 +284,7 @@
         [_checkBtn setBackgroundColor:[UIColor blueColor]];
         
         [_checkBtn addTarget:self action:@selector(checkDataAction) forControlEvents:UIControlEventTouchUpInside];
+        _checkBtn.hidden = YES;
     }
     return _checkBtn;
 }

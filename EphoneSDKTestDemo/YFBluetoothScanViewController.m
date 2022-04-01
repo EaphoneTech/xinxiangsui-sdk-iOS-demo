@@ -88,7 +88,7 @@ typedef enum : NSUInteger {
 {
     static NSString *ID = @"YFBluetoothScanDeviceListCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (!cell) {
+//    if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
         
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -96,7 +96,7 @@ typedef enum : NSUInteger {
         CBPeripheral *peripheral = self.deviceArr[indexPath.row];
         
         cell.textLabel.text = peripheral.name;
-    }
+//    }
     return cell;
 }
 
@@ -111,10 +111,16 @@ typedef enum : NSUInteger {
         [SVProgressHUD loadingWithText:@""];
         self.function = index;
         [[YFBleManager shareTool] connectPeripheral:peripheral];
+        
+        
+        [self performSelector:@selector(fail) withObject:nil afterDelay:30.0];
     }];
     
-    
-    
+}
+
+- (void)fail {
+    [SVProgressHUD dismiss];
+    [SVProgressHUD showErrorWithText:@"设备连接失败"];
 }
 
 
@@ -122,6 +128,8 @@ typedef enum : NSUInteger {
 {
     WEAKSELF;
     dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(fail) object:nil];
         
 //        weakSelf.bluetooth.delegate = nil;
         [SVProgressHUD dismiss];
@@ -158,7 +166,7 @@ typedef enum : NSUInteger {
 
             [weakSelf.deviceArr removeAllObjects];
             [weakSelf.deviceTableView reloadData];
-            [weakSelf BAAlertWithTitle:@"请先将手机蓝牙与设备连接\n打开蓝牙" message:@"" andOthers:@[@"确定"] animated:YES action:^(NSInteger index) {
+            [weakSelf BAAlertWithTitle:@"请开启蓝牙" message:@"" andOthers:@[@"确定"] animated:YES action:^(NSInteger index) {
 
             }];
             return;

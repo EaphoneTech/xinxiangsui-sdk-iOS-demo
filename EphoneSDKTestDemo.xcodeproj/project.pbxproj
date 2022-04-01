@@ -25,7 +25,7 @@
 		5A66AFB1273779AB00528702 /* YFConnectDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A66AFAE273779AB00528702 /* YFConnectDeviceController.m */; };
 		5A66AFB2273779AB00528702 /* YFConnectDeviceFailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A66AFAF273779AB00528702 /* YFConnectDeviceFailController.m */; };
 		5A66AFB527377CC100528702 /* YFConnectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A66AFB427377CC100528702 /* YFConnectView.m */; };
-		5A679FB027F6ABDB00F8133E /* EphoneSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A679FAF27F6ABDB00F8133E /* EphoneSDK.framework */; };
+		5A679FD027F7084D00F8133E /* EphoneSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A679FCF27F7084D00F8133E /* EphoneSDK.framework */; };
 		5A7E751E27EB12A50086218E /* SVProgressHUD+YFToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E751C27EB12A50086218E /* SVProgressHUD+YFToast.m */; };
 		5AAB9BDF273139EB000E88B9 /* YFWaveFormView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AAB9BD5273139EB000E88B9 /* YFWaveFormView.m */; };
 		5AAB9BE0273139EB000E88B9 /* YFLeaveSeatAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AAB9BD7273139EB000E88B9 /* YFLeaveSeatAlertView.m */; };
@@ -88,7 +88,7 @@
 		5A66AFAF273779AB00528702 /* YFConnectDeviceFailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFConnectDeviceFailController.m; sourceTree = "<group>"; };
 		5A66AFB327377CC100528702 /* YFConnectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFConnectView.h; sourceTree = "<group>"; };
 		5A66AFB427377CC100528702 /* YFConnectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFConnectView.m; sourceTree = "<group>"; };
-		5A679FAF27F6ABDB00F8133E /* EphoneSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EphoneSDK.framework; sourceTree = "<group>"; };
+		5A679FCF27F7084D00F8133E /* EphoneSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EphoneSDK.framework; sourceTree = "<group>"; };
 		5A7E751C27EB12A50086218E /* SVProgressHUD+YFToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD+YFToast.m"; sourceTree = "<group>"; };
 		5A7E751D27EB12A50086218E /* SVProgressHUD+YFToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD+YFToast.h"; sourceTree = "<group>"; };
 		5AAB9BD42731381D000E88B9 /* YFDefaultMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFDefaultMacro.h; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A679FB027F6ABDB00F8133E /* EphoneSDK.framework in Frameworks */,
+				5A679FD027F7084D00F8133E /* EphoneSDK.framework in Frameworks */,
 				46FA8FB6309DF5DD6A98A6C2 /* Pods_EphoneSDKTestDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +137,7 @@
 		5A2D47EB2580D74200C32D07 = {
 			isa = PBXGroup;
 			children = (
-				5A679FAF27F6ABDB00F8133E /* EphoneSDK.framework */,
+				5A679FCF27F7084D00F8133E /* EphoneSDK.framework */,
 				5A2D47F62580D74200C32D07 /* EphoneSDKTestDemo */,
 				5A2D48122580D74300C32D07 /* EphoneSDKTestDemoTests */,
 				5A2D481D2580D74300C32D07 /* EphoneSDKTestDemoUITests */,

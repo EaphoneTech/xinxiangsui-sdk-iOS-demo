@@ -69,6 +69,8 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
+    
+    [SVProgressHUD dismiss];
 }
 
 - (void)setupUI {
@@ -141,6 +143,7 @@
         self.checkBtn.hidden = NO;
     } else {
         self.checkBtn.hidden = YES;
+        self.textView.text = @"";
     }
 }
 
@@ -232,15 +235,20 @@
 }
 
 - (void)checkDataAction {
+    [self getLastData:[NSNumber numberWithInt:1]];
+}
+
+- (void) getLastData:(NSNumber *)time {
     [SVProgressHUD loadingWithText:@""];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     NSArray *arr = [self.peripheral.name componentsSeparatedByString:@"."];
     NSString *serialNumber = arr[1];
     
+    WEAKSELF;
     [YFDeviceAPIHelpers YFLastOfDeviceDataWithAccessToken:appDelegate.access_token deviceid:serialNumber success:^(id responseObject) {
         [SVProgressHUD dismiss];
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(checkDataAction) object:nil];
+//        [NSObject cancelPreviousPerformRequestsWithTarget:weakSelf selector:@selector(getLastData:) object:nil];
 
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:responseObject options:NSJSONWritingPrettyPrinted error:nil];
             NSString *jsonString;
@@ -250,20 +258,27 @@
         self.textView.text = jsonString;
         
     } failure:^(NSError *error, NSString *errorDes) {
-        if (error.code == 8008002 || error.code == 8008004) {  //数据上传中/数据分析中
-            [self performSelector:@selector(checkDataAction) withObject:nil afterDelay:2.0];
+        if (error.code == YFErrCodeHealthDataUploading || error.code == YFErrCodeHealthDataUnderAnalysis) {  //数据上传中/数据分析中
+            if ([time intValue] < 10) {
+                [weakSelf performSelector:@selector(getLastData:) withObject:[NSNumber numberWithInt:([time intValue] + 1)] afterDelay:3.0];
+            } else {
+                [SVProgressHUD dismiss];
+//                [NSObject cancelPreviousPerformRequestsWithTarget:weakSelf selector:@selector(getLastData:) object:nil];
+                weakSelf.textView.text = @"此次测量尚未分析出数据报告";
+            }
+            
         } else {
             [SVProgressHUD dismiss];
             switch (error.code) {
                 case YFErrCodeHealthDataNotExit:
-                    self.textView.text = @"数据不存在";
+                    weakSelf.textView.text = @"数据不存在";
                     break;
                 case YFErrCodeHealthDataTimeShort:
-                    self.textView.text = @"数据时长不够";
+                    weakSelf.textView.text = @"数据时长不够";
                     break;
                     
                 default:
-                    self.textView.text = [NSString stringWithFormat:@"%ld,%@", (long)error.code, errorDes];
+                    weakSelf.textView.text = [NSString stringWithFormat:@"%ld,%@", (long)error.code, errorDes];
                     break;
             }
             

@@ -63,6 +63,7 @@ typedef enum : NSUInteger {
     dispatch_async(dispatch_get_main_queue(), ^{
         
         [weakSelf.deviceArr addObject:peripheral];
+        NSLog(@"deviceArr ==== %@", weakSelf.deviceArr);
         [weakSelf.deviceTableView reloadData];
     });
 }

@@ -40,6 +40,7 @@
 | - (void)stopScanPeripheral                             |---| 停止扫描设备 |
 | - (void)connectPeripheral:(CBPeripheral *)peripheral   |CBPeripheral 要连接的设备，不可为空| 连接设备 |
 | - (void)cancelPeripheralConnection                     |---| 取消连接设备 |
+| - (void)connectToInternetWithWifiName:(NSString *)wifiName wifiPassword:(NSString *)wifiPassword           |---| 设备配网 |
 
 
 

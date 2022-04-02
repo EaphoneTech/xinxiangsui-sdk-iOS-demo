@@ -63,8 +63,8 @@
 |方法|参数|说明|
 |-------------|:-------------:|-----|
 | - (void)didScanDevicesPeripheral:(CBPeripheral *)peripheral                             |---| 获取扫描到的设备 |
-| - (void)didConnectSuccessPeripheral:(CBPeripheral *)peripheral   || 设备连接成功 |
-| - (void)didConnectFailPeripheral:(CBPeripheral *)peripheral error:(NSError *)error   || 设备连接失败 |
+| - (void)didConnectSuccessPeripheral:(CBPeripheral *)peripheral   |---| 设备连接成功 |
+| - (void)didConnectFailPeripheral:(CBPeripheral *)peripheral error:(NSError *)error   |---| 设备连接失败 |
 | - (void)didDisconnectPeripheral:(CBPeripheral *)peripheral                    |---| 设备连接断开 |
 | - (void)didSuccessToConnectToInternet:(CBPeripheral *)peripheral                              |---| 设备配网成功 |
 | - (void)didFailToConnectToInternet:(NSString *)error                               |---| 设备配网失败 |

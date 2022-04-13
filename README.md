@@ -36,8 +36,8 @@
 
 |方法|参数|说明|
 |-------------|:-------------:|-----|
-| + (void)YFGetAccessTokenWithAppid:(NSString *)appid secret:(NSString *)secret grantType:(nullable NSString *)grantType success:(YFRequestSuccessBlock)success failure:(YFRequestFailureBlock)failure;                           |appid：心相随云平台生成的appid，secret：心相随云平台生成的secret，grantType：固定为client_credential| 获取鉴权码access_token |
-| + (void)YFLastOfDeviceDataWithAccessToken:(NSString *)accessToken deviceid:(NSString *)deviceid success:(YFRequestSuccessBlock)success failure:(YFRequestFailureBlock)failure;                            |accessToken:令牌，deviceid:设备id| 查看设备最新的健康数据分析结果 |
+| + (void)YFGetAccessTokenWithAppid:(NSString *)appid secret:(NSString *)secret grantType:(nullable NSString *)grantType success:(YFRequestSuccessBlock)success failure:(YFRequestFailureBlock)failure;                           |appid：心相随云平台生成的appid<br> secret：心相随云平台生成的secret<br> grantType：固定为client_credential| 获取鉴权码access_token |
+| + (void)YFLastOfDeviceDataWithAccessToken:(NSString *)accessToken deviceid:(NSString *)deviceid success:(YFRequestSuccessBlock)success failure:(YFRequestFailureBlock)failure;                            |accessToken:令牌<br> deviceid:设备id| 查看设备最新的健康数据分析结果 |
 
    
    

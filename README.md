@@ -85,7 +85,7 @@
 |方法|参数|说明|
 |-------------|:-------------:|-----|
 | - (void)bluetoothECGWaveData:(NSMutableArray *)array                            |---| 实时波形数据 --- ECG |
-| - (void)bluetoothAllWaveECG:(NSMutableArray *)ECGArray PPGRedLight:(NSMutableArray *)PPGRedLightArray PPGInfrared:(NSMutableArray *)PPGInfraredArray  |ECGArray：ECG，PPGRedLightArray：PPG红光数据，PPGInfraredArray：PPG红外数据| 实时波形数据 --- ECG、PPG红光数据、PPG红外数据 |
+| - (void)bluetoothAllWaveECG:(NSMutableArray *)ECGArray PPGRedLight:(NSMutableArray *)PPGRedLightArray PPGInfrared:(NSMutableArray *)PPGInfraredArray  |ECGArray：ECG<br> PPGRedLightArray：PPG红光数据<br> PPGInfraredArray：PPG红外数据| 实时波形数据 --- ECG、PPG红光数据、PPG红外数据 |
 | - (void)bluetoothHeartRate: (long)heartRate                   |---| 心率 |
 | - (void)monitoringDurationOfTheDevice:(long)monitoringTime                            |monitoringTime：时长，单位为秒| 设备监测时长 |
 

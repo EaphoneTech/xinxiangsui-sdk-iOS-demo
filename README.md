@@ -30,6 +30,7 @@
  ```
 
 
+
 ## 心相随云平台：
 ### YFDeviceAPIHelpers
 
@@ -39,7 +40,9 @@
 | + (void)YFLastOfDeviceDataWithAccessToken:(NSString *)accessToken deviceid:(NSString *)deviceid success:(YFRequestSuccessBlock)success failure:(YFRequestFailureBlock)failure;                            |accessToken:令牌，deviceid:设备id| 查看设备最新的健康数据分析结果 |
 
    
-## 实现方法：
+   
+   
+## 设备相关实现：
 ### 1. 单例类YFBleManager：调用单例方法，扫描获取设备列表，读取设备服务
 
 |方法|参数|说明|

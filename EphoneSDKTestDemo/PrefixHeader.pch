@@ -1,0 +1,27 @@
+//
+//  PrefixHeader.pch
+//  EphoneSDKTestDemo
+//
+//  Created by 王丽珍 on 2020/12/10.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreFoundation/CoreFoundation.h>
+#import <YYKit/YYKit.h>
+#import <AFNetworking.h>
+#import <MJExtension.h>
+#import <MQTTClient/MQTTClient.h>
+#import <SVProgressHUD.h>
+
+#import <EphoneSDK/EphoneSDK.h>
+
+#import "SVProgressHUD+YFToast.h"
+#import "UIViewController+BAAlertView.h"
+#import "YFCommonCode.h"
+#import "YFDefaultMacro.h"
+
+#endif /* PrefixHeader_pch */

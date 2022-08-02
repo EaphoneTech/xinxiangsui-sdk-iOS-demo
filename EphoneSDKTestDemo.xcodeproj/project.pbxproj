@@ -1,0 +1,898 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		46FA8FB6309DF5DD6A98A6C2 /* Pods_EphoneSDKTestDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97184FA82BA199A1B7E08B0 /* Pods_EphoneSDKTestDemo.framework */; };
+		5A2D47F92580D74200C32D07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2D47F82580D74200C32D07 /* AppDelegate.m */; };
+		5A2D47FF2580D74200C32D07 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2D47FE2580D74200C32D07 /* ViewController.m */; };
+		5A2D48042580D74300C32D07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A2D48032580D74300C32D07 /* Assets.xcassets */; };
+		5A2D48072580D74300C32D07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A2D48052580D74300C32D07 /* LaunchScreen.storyboard */; };
+		5A2D480A2580D74300C32D07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2D48092580D74300C32D07 /* main.m */; };
+		5A2D48142580D74300C32D07 /* EphoneSDKTestDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2D48132580D74300C32D07 /* EphoneSDKTestDemoTests.m */; };
+		5A2D481F2580D74300C32D07 /* EphoneSDKTestDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2D481E2580D74300C32D07 /* EphoneSDKTestDemoUITests.m */; };
+		5A48C44927311C6F00E8A8CE /* UIViewController+BAAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A48C44827311C6F00E8A8CE /* UIViewController+BAAlertView.m */; };
+		5A48C44F27311F4400E8A8CE /* YFECGWaveFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A48C44E27311F4400E8A8CE /* YFECGWaveFormController.m */; };
+		5A48C46F2731291A00E8A8CE /* YFCommonCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A48C46D2731291A00E8A8CE /* YFCommonCode.m */; };
+		5A63EB1D27322B7F00E13E74 /* YFBluetoothScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A63EB1C27322B7F00E13E74 /* YFBluetoothScanViewController.m */; };
+		5A66915D2734DDE70084D570 /* YFConfigureWiFiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A66915B2734DDE70084D570 /* YFConfigureWiFiViewController.m */; };
+		5A669163273516630084D570 /* YFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A669162273516630084D570 /* YFTextField.m */; };
+		5A66AFB0273779AB00528702 /* YFConnectDeviceSuccessController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A66AFAB273779AB00528702 /* YFConnectDeviceSuccessController.m */; };
+		5A66AFB1273779AB00528702 /* YFConnectDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A66AFAE273779AB00528702 /* YFConnectDeviceController.m */; };
+		5A66AFB2273779AB00528702 /* YFConnectDeviceFailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A66AFAF273779AB00528702 /* YFConnectDeviceFailController.m */; };
+		5A66AFB527377CC100528702 /* YFConnectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A66AFB427377CC100528702 /* YFConnectView.m */; };
+		5A679FD027F7084D00F8133E /* EphoneSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A679FCF27F7084D00F8133E /* EphoneSDK.framework */; };
+		5A7E751E27EB12A50086218E /* SVProgressHUD+YFToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E751C27EB12A50086218E /* SVProgressHUD+YFToast.m */; };
+		5AAB9BDF273139EB000E88B9 /* YFWaveFormView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AAB9BD5273139EB000E88B9 /* YFWaveFormView.m */; };
+		5AAB9BE0273139EB000E88B9 /* YFLeaveSeatAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AAB9BD7273139EB000E88B9 /* YFLeaveSeatAlertView.m */; };
+		5AAB9BE1273139EB000E88B9 /* ECGView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AAB9BD8273139EB000E88B9 /* ECGView.m */; };
+		5AAB9BE2273139EB000E88B9 /* YFReconnectBleAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AAB9BDB273139EB000E88B9 /* YFReconnectBleAlertView.m */; };
+		5AAB9BE3273139EB000E88B9 /* YFECGCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AAB9BDC273139EB000E88B9 /* YFECGCoverView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5A2D48102580D74300C32D07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A2D47EC2580D74200C32D07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A2D47F32580D74200C32D07;
+			remoteInfo = EphoneSDKTestDemo;
+		};
+		5A2D481B2580D74300C32D07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A2D47EC2580D74200C32D07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A2D47F32580D74200C32D07;
+			remoteInfo = EphoneSDKTestDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5A2D47F42580D74200C32D07 /* EphoneSDKTestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EphoneSDKTestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A2D47F72580D74200C32D07 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5A2D47F82580D74200C32D07 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5A2D47FD2580D74200C32D07 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5A2D47FE2580D74200C32D07 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5A2D48032580D74300C32D07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A2D48062580D74300C32D07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5A2D48082580D74300C32D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A2D48092580D74300C32D07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5A2D480F2580D74300C32D07 /* EphoneSDKTestDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EphoneSDKTestDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A2D48132580D74300C32D07 /* EphoneSDKTestDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EphoneSDKTestDemoTests.m; sourceTree = "<group>"; };
+		5A2D48152580D74300C32D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A2D481A2580D74300C32D07 /* EphoneSDKTestDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EphoneSDKTestDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A2D481E2580D74300C32D07 /* EphoneSDKTestDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EphoneSDKTestDemoUITests.m; sourceTree = "<group>"; };
+		5A2D48202580D74300C32D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A48C44727311C6F00E8A8CE /* UIViewController+BAAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BAAlertView.h"; sourceTree = "<group>"; };
+		5A48C44827311C6F00E8A8CE /* UIViewController+BAAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BAAlertView.m"; sourceTree = "<group>"; };
+		5A48C44D27311F4400E8A8CE /* YFECGWaveFormController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFECGWaveFormController.h; sourceTree = "<group>"; };
+		5A48C44E27311F4400E8A8CE /* YFECGWaveFormController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFECGWaveFormController.m; sourceTree = "<group>"; };
+		5A48C46D2731291A00E8A8CE /* YFCommonCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFCommonCode.m; sourceTree = "<group>"; };
+		5A48C46E2731291A00E8A8CE /* YFCommonCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFCommonCode.h; sourceTree = "<group>"; };
+		5A4966FE25821C1E0055EFAE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		5A63EB1B27322B7F00E13E74 /* YFBluetoothScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFBluetoothScanViewController.h; sourceTree = "<group>"; };
+		5A63EB1C27322B7F00E13E74 /* YFBluetoothScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFBluetoothScanViewController.m; sourceTree = "<group>"; };
+		5A66915B2734DDE70084D570 /* YFConfigureWiFiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFConfigureWiFiViewController.m; sourceTree = "<group>"; };
+		5A66915C2734DDE70084D570 /* YFConfigureWiFiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFConfigureWiFiViewController.h; sourceTree = "<group>"; };
+		5A669161273516630084D570 /* YFTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFTextField.h; sourceTree = "<group>"; };
+		5A669162273516630084D570 /* YFTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFTextField.m; sourceTree = "<group>"; };
+		5A66AFAA273779AB00528702 /* YFConnectDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFConnectDeviceController.h; sourceTree = "<group>"; };
+		5A66AFAB273779AB00528702 /* YFConnectDeviceSuccessController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFConnectDeviceSuccessController.m; sourceTree = "<group>"; };
+		5A66AFAC273779AB00528702 /* YFConnectDeviceSuccessController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFConnectDeviceSuccessController.h; sourceTree = "<group>"; };
+		5A66AFAD273779AB00528702 /* YFConnectDeviceFailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFConnectDeviceFailController.h; sourceTree = "<group>"; };
+		5A66AFAE273779AB00528702 /* YFConnectDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFConnectDeviceController.m; sourceTree = "<group>"; };
+		5A66AFAF273779AB00528702 /* YFConnectDeviceFailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFConnectDeviceFailController.m; sourceTree = "<group>"; };
+		5A66AFB327377CC100528702 /* YFConnectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFConnectView.h; sourceTree = "<group>"; };
+		5A66AFB427377CC100528702 /* YFConnectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFConnectView.m; sourceTree = "<group>"; };
+		5A679FCF27F7084D00F8133E /* EphoneSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EphoneSDK.framework; sourceTree = "<group>"; };
+		5A7E751C27EB12A50086218E /* SVProgressHUD+YFToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD+YFToast.m"; sourceTree = "<group>"; };
+		5A7E751D27EB12A50086218E /* SVProgressHUD+YFToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD+YFToast.h"; sourceTree = "<group>"; };
+		5AAB9BD42731381D000E88B9 /* YFDefaultMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFDefaultMacro.h; sourceTree = "<group>"; };
+		5AAB9BD5273139EB000E88B9 /* YFWaveFormView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFWaveFormView.m; sourceTree = "<group>"; };
+		5AAB9BD6273139EB000E88B9 /* YFReconnectBleAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFReconnectBleAlertView.h; sourceTree = "<group>"; };
+		5AAB9BD7273139EB000E88B9 /* YFLeaveSeatAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFLeaveSeatAlertView.m; sourceTree = "<group>"; };
+		5AAB9BD8273139EB000E88B9 /* ECGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGView.m; sourceTree = "<group>"; };
+		5AAB9BD9273139EB000E88B9 /* YFECGCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFECGCoverView.h; sourceTree = "<group>"; };
+		5AAB9BDA273139EB000E88B9 /* ECGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGView.h; sourceTree = "<group>"; };
+		5AAB9BDB273139EB000E88B9 /* YFReconnectBleAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFReconnectBleAlertView.m; sourceTree = "<group>"; };
+		5AAB9BDC273139EB000E88B9 /* YFECGCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFECGCoverView.m; sourceTree = "<group>"; };
+		5AAB9BDD273139EB000E88B9 /* YFLeaveSeatAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFLeaveSeatAlertView.h; sourceTree = "<group>"; };
+		5AAB9BDE273139EB000E88B9 /* YFWaveFormView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFWaveFormView.h; sourceTree = "<group>"; };
+		8D6D4185B3F7F52DFD5C9777 /* Pods-EphoneSDKTestDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EphoneSDKTestDemo.debug.xcconfig"; path = "Target Support Files/Pods-EphoneSDKTestDemo/Pods-EphoneSDKTestDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E97184FA82BA199A1B7E08B0 /* Pods_EphoneSDKTestDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EphoneSDKTestDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB4CF725ED9FE1E0BF19A92F /* Pods-EphoneSDKTestDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EphoneSDKTestDemo.release.xcconfig"; path = "Target Support Files/Pods-EphoneSDKTestDemo/Pods-EphoneSDKTestDemo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A2D47F12580D74200C32D07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A679FD027F7084D00F8133E /* EphoneSDK.framework in Frameworks */,
+				46FA8FB6309DF5DD6A98A6C2 /* Pods_EphoneSDKTestDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A2D480C2580D74300C32D07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A2D48172580D74300C32D07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A2D47EB2580D74200C32D07 = {
+			isa = PBXGroup;
+			children = (
+				5A679FCF27F7084D00F8133E /* EphoneSDK.framework */,
+				5A2D47F62580D74200C32D07 /* EphoneSDKTestDemo */,
+				5A2D48122580D74300C32D07 /* EphoneSDKTestDemoTests */,
+				5A2D481D2580D74300C32D07 /* EphoneSDKTestDemoUITests */,
+				5A2D47F52580D74200C32D07 /* Products */,
+				CE58355F7E3C3B294A056409 /* Pods */,
+				DC9BD463C82C9F462A65BA2F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5A2D47F52580D74200C32D07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A2D47F42580D74200C32D07 /* EphoneSDKTestDemo.app */,
+				5A2D480F2580D74300C32D07 /* EphoneSDKTestDemoTests.xctest */,
+				5A2D481A2580D74300C32D07 /* EphoneSDKTestDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A2D47F62580D74200C32D07 /* EphoneSDKTestDemo */ = {
+			isa = PBXGroup;
+			children = (
+				5A2D47F72580D74200C32D07 /* AppDelegate.h */,
+				5A2D47F82580D74200C32D07 /* AppDelegate.m */,
+				5A2D47FD2580D74200C32D07 /* ViewController.h */,
+				5A2D47FE2580D74200C32D07 /* ViewController.m */,
+				5A63EB1B27322B7F00E13E74 /* YFBluetoothScanViewController.h */,
+				5A63EB1C27322B7F00E13E74 /* YFBluetoothScanViewController.m */,
+				5AAB9BE5273145FA000E88B9 /* YFWifiConnect */,
+				5A48C453273121A600E8A8CE /* YFWaveForm */,
+				5A48C46C273128E200E8A8CE /* YFCommon */,
+				5A7E751B27EB12750086218E /* Category */,
+				5AAB9BD3273137E0000E88B9 /* Macro */,
+				5A4966FE25821C1E0055EFAE /* PrefixHeader.pch */,
+				5A2D48032580D74300C32D07 /* Assets.xcassets */,
+				5A2D48052580D74300C32D07 /* LaunchScreen.storyboard */,
+				5A2D48082580D74300C32D07 /* Info.plist */,
+				5A2D48092580D74300C32D07 /* main.m */,
+			);
+			path = EphoneSDKTestDemo;
+			sourceTree = "<group>";
+		};
+		5A2D48122580D74300C32D07 /* EphoneSDKTestDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A2D48132580D74300C32D07 /* EphoneSDKTestDemoTests.m */,
+				5A2D48152580D74300C32D07 /* Info.plist */,
+			);
+			path = EphoneSDKTestDemoTests;
+			sourceTree = "<group>";
+		};
+		5A2D481D2580D74300C32D07 /* EphoneSDKTestDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5A2D481E2580D74300C32D07 /* EphoneSDKTestDemoUITests.m */,
+				5A2D48202580D74300C32D07 /* Info.plist */,
+			);
+			path = EphoneSDKTestDemoUITests;
+			sourceTree = "<group>";
+		};
+		5A48C453273121A600E8A8CE /* YFWaveForm */ = {
+			isa = PBXGroup;
+			children = (
+				5A48C44D27311F4400E8A8CE /* YFECGWaveFormController.h */,
+				5A48C44E27311F4400E8A8CE /* YFECGWaveFormController.m */,
+				5AAB9BDA273139EB000E88B9 /* ECGView.h */,
+				5AAB9BD8273139EB000E88B9 /* ECGView.m */,
+				5AAB9BD9273139EB000E88B9 /* YFECGCoverView.h */,
+				5AAB9BDC273139EB000E88B9 /* YFECGCoverView.m */,
+				5AAB9BDD273139EB000E88B9 /* YFLeaveSeatAlertView.h */,
+				5AAB9BD7273139EB000E88B9 /* YFLeaveSeatAlertView.m */,
+				5AAB9BD6273139EB000E88B9 /* YFReconnectBleAlertView.h */,
+				5AAB9BDB273139EB000E88B9 /* YFReconnectBleAlertView.m */,
+				5AAB9BDE273139EB000E88B9 /* YFWaveFormView.h */,
+				5AAB9BD5273139EB000E88B9 /* YFWaveFormView.m */,
+			);
+			path = YFWaveForm;
+			sourceTree = "<group>";
+		};
+		5A48C46C273128E200E8A8CE /* YFCommon */ = {
+			isa = PBXGroup;
+			children = (
+				5A48C46E2731291A00E8A8CE /* YFCommonCode.h */,
+				5A48C46D2731291A00E8A8CE /* YFCommonCode.m */,
+			);
+			path = YFCommon;
+			sourceTree = "<group>";
+		};
+		5A7E751B27EB12750086218E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5A7E751D27EB12A50086218E /* SVProgressHUD+YFToast.h */,
+				5A7E751C27EB12A50086218E /* SVProgressHUD+YFToast.m */,
+				5A48C44727311C6F00E8A8CE /* UIViewController+BAAlertView.h */,
+				5A48C44827311C6F00E8A8CE /* UIViewController+BAAlertView.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		5AAB9BD3273137E0000E88B9 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				5AAB9BD42731381D000E88B9 /* YFDefaultMacro.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		5AAB9BE5273145FA000E88B9 /* YFWifiConnect */ = {
+			isa = PBXGroup;
+			children = (
+				5A66915C2734DDE70084D570 /* YFConfigureWiFiViewController.h */,
+				5A66915B2734DDE70084D570 /* YFConfigureWiFiViewController.m */,
+				5A66AFAA273779AB00528702 /* YFConnectDeviceController.h */,
+				5A66AFAE273779AB00528702 /* YFConnectDeviceController.m */,
+				5A66AFAD273779AB00528702 /* YFConnectDeviceFailController.h */,
+				5A66AFAF273779AB00528702 /* YFConnectDeviceFailController.m */,
+				5A66AFAC273779AB00528702 /* YFConnectDeviceSuccessController.h */,
+				5A66AFAB273779AB00528702 /* YFConnectDeviceSuccessController.m */,
+				5A66AFB327377CC100528702 /* YFConnectView.h */,
+				5A66AFB427377CC100528702 /* YFConnectView.m */,
+				5A669161273516630084D570 /* YFTextField.h */,
+				5A669162273516630084D570 /* YFTextField.m */,
+			);
+			path = YFWifiConnect;
+			sourceTree = "<group>";
+		};
+		CE58355F7E3C3B294A056409 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8D6D4185B3F7F52DFD5C9777 /* Pods-EphoneSDKTestDemo.debug.xcconfig */,
+				EB4CF725ED9FE1E0BF19A92F /* Pods-EphoneSDKTestDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DC9BD463C82C9F462A65BA2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E97184FA82BA199A1B7E08B0 /* Pods_EphoneSDKTestDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A2D47F32580D74200C32D07 /* EphoneSDKTestDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A2D48232580D74300C32D07 /* Build configuration list for PBXNativeTarget "EphoneSDKTestDemo" */;
+			buildPhases = (
+				B53ECFB572C2D89082097307 /* [CP] Check Pods Manifest.lock */,
+				5A2D47F02580D74200C32D07 /* Sources */,
+				5A2D47F12580D74200C32D07 /* Frameworks */,
+				5A2D47F22580D74200C32D07 /* Resources */,
+				D89970F94E93C39DC5F0852E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EphoneSDKTestDemo;
+			productName = EphoneSDKTestDemo;
+			productReference = 5A2D47F42580D74200C32D07 /* EphoneSDKTestDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5A2D480E2580D74300C32D07 /* EphoneSDKTestDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A2D48262580D74300C32D07 /* Build configuration list for PBXNativeTarget "EphoneSDKTestDemoTests" */;
+			buildPhases = (
+				5A2D480B2580D74300C32D07 /* Sources */,
+				5A2D480C2580D74300C32D07 /* Frameworks */,
+				5A2D480D2580D74300C32D07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A2D48112580D74300C32D07 /* PBXTargetDependency */,
+			);
+			name = EphoneSDKTestDemoTests;
+			productName = EphoneSDKTestDemoTests;
+			productReference = 5A2D480F2580D74300C32D07 /* EphoneSDKTestDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5A2D48192580D74300C32D07 /* EphoneSDKTestDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A2D48292580D74300C32D07 /* Build configuration list for PBXNativeTarget "EphoneSDKTestDemoUITests" */;
+			buildPhases = (
+				5A2D48162580D74300C32D07 /* Sources */,
+				5A2D48172580D74300C32D07 /* Frameworks */,
+				5A2D48182580D74300C32D07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A2D481C2580D74300C32D07 /* PBXTargetDependency */,
+			);
+			name = EphoneSDKTestDemoUITests;
+			productName = EphoneSDKTestDemoUITests;
+			productReference = 5A2D481A2580D74300C32D07 /* EphoneSDKTestDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A2D47EC2580D74200C32D07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					5A2D47F32580D74200C32D07 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					5A2D480E2580D74300C32D07 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = 5A2D47F32580D74200C32D07;
+					};
+					5A2D48192580D74300C32D07 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = 5A2D47F32580D74200C32D07;
+					};
+				};
+			};
+			buildConfigurationList = 5A2D47EF2580D74200C32D07 /* Build configuration list for PBXProject "EphoneSDKTestDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5A2D47EB2580D74200C32D07;
+			productRefGroup = 5A2D47F52580D74200C32D07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A2D47F32580D74200C32D07 /* EphoneSDKTestDemo */,
+				5A2D480E2580D74300C32D07 /* EphoneSDKTestDemoTests */,
+				5A2D48192580D74300C32D07 /* EphoneSDKTestDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A2D47F22580D74200C32D07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A2D48072580D74300C32D07 /* LaunchScreen.storyboard in Resources */,
+				5A2D48042580D74300C32D07 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A2D480D2580D74300C32D07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A2D48182580D74300C32D07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B53ECFB572C2D89082097307 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EphoneSDKTestDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D89970F94E93C39DC5F0852E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EphoneSDKTestDemo/Pods-EphoneSDKTestDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EphoneSDKTestDemo/Pods-EphoneSDKTestDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EphoneSDKTestDemo/Pods-EphoneSDKTestDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A2D47F02580D74200C32D07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A2D47FF2580D74200C32D07 /* ViewController.m in Sources */,
+				5AAB9BE3273139EB000E88B9 /* YFECGCoverView.m in Sources */,
+				5A66AFB527377CC100528702 /* YFConnectView.m in Sources */,
+				5A669163273516630084D570 /* YFTextField.m in Sources */,
+				5A66AFB1273779AB00528702 /* YFConnectDeviceController.m in Sources */,
+				5A2D47F92580D74200C32D07 /* AppDelegate.m in Sources */,
+				5A66AFB0273779AB00528702 /* YFConnectDeviceSuccessController.m in Sources */,
+				5A48C46F2731291A00E8A8CE /* YFCommonCode.m in Sources */,
+				5A7E751E27EB12A50086218E /* SVProgressHUD+YFToast.m in Sources */,
+				5A48C44F27311F4400E8A8CE /* YFECGWaveFormController.m in Sources */,
+				5A2D480A2580D74300C32D07 /* main.m in Sources */,
+				5AAB9BE0273139EB000E88B9 /* YFLeaveSeatAlertView.m in Sources */,
+				5A66915D2734DDE70084D570 /* YFConfigureWiFiViewController.m in Sources */,
+				5AAB9BE1273139EB000E88B9 /* ECGView.m in Sources */,
+				5A63EB1D27322B7F00E13E74 /* YFBluetoothScanViewController.m in Sources */,
+				5AAB9BDF273139EB000E88B9 /* YFWaveFormView.m in Sources */,
+				5AAB9BE2273139EB000E88B9 /* YFReconnectBleAlertView.m in Sources */,
+				5A66AFB2273779AB00528702 /* YFConnectDeviceFailController.m in Sources */,
+				5A48C44927311C6F00E8A8CE /* UIViewController+BAAlertView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A2D480B2580D74300C32D07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A2D48142580D74300C32D07 /* EphoneSDKTestDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A2D48162580D74300C32D07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A2D481F2580D74300C32D07 /* EphoneSDKTestDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A2D48112580D74300C32D07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A2D47F32580D74200C32D07 /* EphoneSDKTestDemo */;
+			targetProxy = 5A2D48102580D74300C32D07 /* PBXContainerItemProxy */;
+		};
+		5A2D481C2580D74300C32D07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A2D47F32580D74200C32D07 /* EphoneSDKTestDemo */;
+			targetProxy = 5A2D481B2580D74300C32D07 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5A2D48052580D74300C32D07 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A2D48062580D74300C32D07 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5A2D48212580D74300C32D07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_WORKSPACE = YES;
+			};
+			name = Debug;
+		};
+		5A2D48222580D74300C32D07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VALIDATE_WORKSPACE = YES;
+			};
+			name = Release;
+		};
+		5A2D48242580D74300C32D07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D6D4185B3F7F52DFD5C9777 /* Pods-EphoneSDKTestDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULE_DEBUGGING = YES;
+				CODE_SIGN_ENTITLEMENTS = /Users/wanglizhen/Documents/EphoneSDK/EphoneSDKTestDemo/EphoneSDKTestDemo/EphoneSDKTestDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XCEXNP33D3;
+				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREFIX_HEADER = "/Users/wanglizhen/Desktop/未命名文件夹/EphoneSDK/EphoneSDKTestDemo/EphoneSDKTestDemo/PrefixHeader.pch";
+				INFOPLIST_FILE = EphoneSDKTestDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/EphoneSDK.framework\"";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreImage\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MJExtension\"",
+					"-framework",
+					"\"MQTTClient\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"YYKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YF.EphoneSDKTestDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = NO;
+			};
+			name = Debug;
+		};
+		5A2D48252580D74300C32D07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB4CF725ED9FE1E0BF19A92F /* Pods-EphoneSDKTestDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULE_DEBUGGING = YES;
+				CODE_SIGN_ENTITLEMENTS = /Users/wanglizhen/Documents/EphoneSDK/EphoneSDKTestDemo/EphoneSDKTestDemo/EphoneSDKTestDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XCEXNP33D3;
+				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREFIX_HEADER = "/Users/wanglizhen/Desktop/未命名文件夹/EphoneSDK/EphoneSDKTestDemo/EphoneSDKTestDemo/PrefixHeader.pch";
+				INFOPLIST_FILE = EphoneSDKTestDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/EphoneSDK.framework\"";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreImage\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MJExtension\"",
+					"-framework",
+					"\"MQTTClient\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"YYKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YF.EphoneSDKTestDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = NO;
+			};
+			name = Release;
+		};
+		5A2D48272580D74300C32D07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XCEXNP33D3;
+				INFOPLIST_FILE = EphoneSDKTestDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YF.EphoneSDKTestDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EphoneSDKTestDemo.app/EphoneSDKTestDemo";
+			};
+			name = Debug;
+		};
+		5A2D48282580D74300C32D07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XCEXNP33D3;
+				INFOPLIST_FILE = EphoneSDKTestDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YF.EphoneSDKTestDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EphoneSDKTestDemo.app/EphoneSDKTestDemo";
+			};
+			name = Release;
+		};
+		5A2D482A2580D74300C32D07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XCEXNP33D3;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				INFOPLIST_FILE = EphoneSDKTestDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YF.EphoneSDKTestDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EphoneSDKTestDemo;
+			};
+			name = Debug;
+		};
+		5A2D482B2580D74300C32D07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XCEXNP33D3;
+				EXCLUDED_ARCHS = "";
+				INFOPLIST_FILE = EphoneSDKTestDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YF.EphoneSDKTestDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EphoneSDKTestDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A2D47EF2580D74200C32D07 /* Build configuration list for PBXProject "EphoneSDKTestDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A2D48212580D74300C32D07 /* Debug */,
+				5A2D48222580D74300C32D07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A2D48232580D74300C32D07 /* Build configuration list for PBXNativeTarget "EphoneSDKTestDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A2D48242580D74300C32D07 /* Debug */,
+				5A2D48252580D74300C32D07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A2D48262580D74300C32D07 /* Build configuration list for PBXNativeTarget "EphoneSDKTestDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A2D48272580D74300C32D07 /* Debug */,
+				5A2D48282580D74300C32D07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A2D48292580D74300C32D07 /* Build configuration list for PBXNativeTarget "EphoneSDKTestDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A2D482A2580D74300C32D07 /* Debug */,
+				5A2D482B2580D74300C32D07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5A2D47EC2580D74200C32D07 /* Project object */;
+}

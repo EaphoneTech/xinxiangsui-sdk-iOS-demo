@@ -7,13 +7,13 @@
 ## 集成说明
 1. 两种集成方式 
 
-方式一：导入直接导入framework文件
+  方式一：导入直接导入framework文件
 ```
 将EphoneSDK.framework拷贝至项目根目录
 //导入头文件
 #import <EphoneSDK/EphoneSDK.h>
 ```
-方式二：使用CocoaPods
+  方式二：使用CocoaPods
 ```
 pod 'XinxiangsuiSDK'
 //导入头文件

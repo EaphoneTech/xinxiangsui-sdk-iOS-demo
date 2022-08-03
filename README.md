@@ -5,14 +5,21 @@
    
    
 ## 集成说明
-1. 将EphoneSDK.framework拷贝至项目根目录
-
-2. 导入头文件
+1. 两种集成方式 
+方式一：导入直接导入framework文件
 ```
+将EphoneSDK.framework拷贝至项目根目录
+//导入头文件
 #import <EphoneSDK/EphoneSDK.h>
 ```
+方式二：使用CocoaPods
+```
+pod 'XinxiangsuiSDK'
+//导入头文件
+#import <XinxiangsuiSDK/EphoneSDK.h>
+```
 
-3. info.plist中设定蓝牙访问权限、定位权限（用于获取Wi-Fi）
+2. info.plist中设定蓝牙访问权限、定位权限（用于获取Wi-Fi）
 ```
 <key>NSBluetoothAlwaysUsageDescription</key>
 <string>心相随需要访问您的蓝牙，用于您设备联网等功能</string>
@@ -23,7 +30,7 @@
 <string>获取Wi-FI名称需要您的定位权限，以便帮助您配置设备</string>
 ```
 
-4. 项目TARGETS
+3. 项目TARGETS
 ```
  Capability：添加Access WiFi Information
  Background Modes: 选择 Uses Bluetooth LE accessories、Background fetch

@@ -10,14 +10,14 @@
   方式一：导入直接导入framework文件
 ```
 将EphoneSDK.framework拷贝至项目根目录
-//导入头文件
-#import <EphoneSDK/EphoneSDK.h>
+
+#import <EphoneSDK/EphoneSDK.h>     //导入头文件
 ```
   方式二：使用CocoaPods
 ```
 pod 'XinxiangsuiSDK'
-//导入头文件
-#import <XinxiangsuiSDK/EphoneSDK.h>
+
+#import <XinxiangsuiSDK/EphoneSDK.h>    //导入头文件
 ```
 
 2. info.plist中设定蓝牙访问权限、定位权限（用于获取Wi-Fi）

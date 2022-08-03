@@ -6,6 +6,7 @@
    
 ## 集成说明
 1. 两种集成方式 
+
 方式一：导入直接导入framework文件
 ```
 将EphoneSDK.framework拷贝至项目根目录
